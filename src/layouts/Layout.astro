@@ -54,6 +54,7 @@ const isIndexPage =
   currentPage === "/ur" ||
   currentPage === "/de/" ||
   currentPage === "/ur/";
+const isWorkPage = currentPage.includes('/work');
 ---
 
 <!doctype html>
@@ -64,6 +65,15 @@ const isIndexPage =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="robots" content="index, follow" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://www.otherdev.com">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" as="font" href="/fonts/QueensCompressed/QueensCompressed_W-Light.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/fonts/TWKLausanne/TWKLausanne-400.woff2" type="font/woff2" crossorigin>
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="dc.relation" content={Astro.url.origin} />
@@ -86,21 +96,21 @@ const isIndexPage =
     <!-- Link to Google Business Profile -->
     <link href="https://g.page/17231828160667184010" rel="external nofollow" />
 
-    <!-- Preconnect to Speed Up External Resources (Fonts, etc.) -->
-    <link rel="preconnect" href="https://www.otherdev.com" />
-    <link rel="preconnect" href="https://www.otherdev.com" crossorigin />
-
     <!-- Favicon and App Icons -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon-16x16.webp" sizes="16x16" />
     <link rel="icon" href="/favicon-180x180.webp" sizes="180x180" />
     <link rel="icon" href="/favicon-192x192.webp" sizes="192x192" />
+    
+    <!-- Load GSAP conditionally -->
     <script is:inline src="/js/gsap/gsap.js"></script>
-    <script is:inline defer src="/js/gsap/ScrollSmoother.js"></script>
-    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"
-    ></script>
-    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
-    ></script>
+    {(isWorkPage || isIndexPage) && (
+      <>
+        <script is:inline defer src="/js/gsap/ScrollSmoother.js"></script>
+        <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+      </>
+    )}
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
 
     <slot name="head" />
   </head>
@@ -174,16 +184,18 @@ const isIndexPage =
     </div>
     <Navigation />
     <div id="smooth-content" style="will-change: transform">
-      <div
-        class="noise-bg fixed w-full"
-        style="flex-grow: 1 1 auto;will-change: transform; height: 100%;"
-        aria-hidden="true">
-        <svg>
-          <filter id="noise-bg-fx">
-            <feTurbulence baseFrequency="0.5"></feTurbulence>
-          </filter>
-        </svg>
-      </div>
+      {!isWorkPage && (
+        <div
+          class="noise-bg fixed w-full"
+          style="flex-grow: 1 1 auto;will-change: transform; height: 100%;"
+          aria-hidden="true">
+          <svg>
+            <filter id="noise-bg-fx">
+              <feTurbulence baseFrequency="0.5"></feTurbulence>
+            </filter>
+          </svg>
+        </div>
+      )}
 
       <main class="page snap-always relative snap-mandatory snap-y smooth-content no-scrollbar">
         <div class="snap-center"><slot /></div>
@@ -250,6 +262,18 @@ const isIndexPage =
     }
     main {
       opacity: 100;
+    }
+    
+    /* Performance optimizations */
+    .smooth-content {
+      transform: translateZ(0); /* Force GPU acceleration */
+    }
+    
+    /* Disable expensive effects on mobile */
+    @media (max-width: 768px) {
+      .noise-bg {
+        display: none !important;
+      }
     }
   </style>
 </html>

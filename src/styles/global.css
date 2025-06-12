@@ -38,12 +38,14 @@ html {
 @font-face {
   font-family: "QueensCompressed";
   src: url("/fonts/QueensCompressed/QueensCompressed_W-Light.woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "TWKLausanne";
   src: url("/fonts/TWKLausanne/TWKLausanne-400.woff2") format("woff2"),
     url("/fonts/TWKLausanne/TWKLausanne-300-1.woff2") format("woff2"),
     url("/fonts/TWKLausanne/TWKLausanne-200 (1).woff2") format("woff2");
+  font-display: swap;
 }
 
 .twk-lausanne {
@@ -213,4 +215,63 @@ body {
   width: 100%;
   top: 33.33%;
   box-shadow: 0 33.33vh rgba(0, 255, 21, 0.3);
+}
+
+/* Performance optimizations */
+.upper-slideshow-image {
+  contain: layout style paint;
+  will-change: transform, opacity;
+}
+
+/* Reduce repaints during scroll */
+.smooth-content {
+  will-change: transform;
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Optimize font rendering */
+.queens-compressed,
+.twk-lausanne {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize work page hover images */
+.work-hover-image {
+  will-change: opacity;
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+/* Disable expensive effects on mobile */
+@media (max-width: 768px) {
+  .noise-bg {
+    display: none !important;
+  }
+  
+  .smooth-content {
+    will-change: auto;
+  }
+  
+  /* Disable smooth scroll on mobile */
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduce animation complexity on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize large text rendering */
+.queens-compressed {
+  font-kerning: none;
+  font-variant-ligatures: none;
 }

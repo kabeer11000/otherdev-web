@@ -41,7 +41,9 @@ else
                           <img 
                             src={item.imageSrc}
                             loading="lazy"
-                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                            decoding="async"
+                            data-hover-src={item.imageSrc}
+                            class="work-hover-image w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] opacity-0 invisible transition-opacity duration-300"
                             alt={item.title}
                           />
                         )}
@@ -55,7 +57,9 @@ else
                           <img
                             src={item.imageSrc}
                             loading="lazy"
-                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                            decoding="async"
+                            data-hover-src={item.imageSrc}
+                            class="work-hover-image w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] opacity-0 invisible transition-opacity duration-300"
                             alt={item.title}
                           />
                         )}
@@ -79,3 +83,42 @@ else
     </div>
   </div>
 </Layout>
+
+<style>
+  /* Use visibility instead of display for better performance */
+  .work-hover-image {
+    will-change: opacity;
+    contain: layout style paint;
+    transform: translateZ(0); /* Force GPU acceleration */
+  }
+  
+  .group:hover .work-hover-image {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Optimize table rendering */
+  table {
+    contain: layout;
+  }
+</style>
+
+<script>
+  // Lazy load hover images
+  document.addEventListener('DOMContentLoaded', () => {
+    const hoverImages = document.querySelectorAll('.work-hover-image');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          // Preload image when row is in viewport
+          const preloadImg = new Image();
+          preloadImg.src = img.dataset.hoverSrc;
+          imageObserver.unobserve(img);
+        }
+      });
+    }, { rootMargin: '50px' });
+
+    hoverImages.forEach(img => imageObserver.observe(img));
+  });
+</script>
