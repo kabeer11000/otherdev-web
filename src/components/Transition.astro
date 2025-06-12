@@ -2,22 +2,41 @@
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
     // Register GSAP plugins once on load
-    gsap.config({ trialWarn: false,
-nullTargetWarn: false, nullTarget: null, nullTargetWarn: false });
-    gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);
-    ScrollTrigger.create({
-      preventDefault: true,
-      normalizeScroll: true,
-    })
-    // Initialize ScrollSmoother with settings
-    ScrollSmoother.create({
+    gsap.config({ 
       trialWarn: false,
-  smooth: 2,
-  speed: 2,
-  effects: true,
- normalizeScroll: false,
-  smoothTouch: 0.1,
+      nullTargetWarn: false, 
+      force3D: false, // Disable 3D transforms for better performance
+      autoSleep: 60 // Auto-sleep after 60 seconds of inactivity
     });
+    
+    gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);
+    
+    // Optimize ScrollTrigger
+    ScrollTrigger.config({
+      limitCallbacks: true, // Limit callback frequency
+      syncInterval: 40 // Sync every 40ms instead of default 16ms
+    });
+    
+    // Only enable ScrollSmoother on desktop and non-work pages
+    const isWorkPage = window.location.pathname.includes('/work');
+    const isDesktop = window.innerWidth > 1024;
+    
+    if (isDesktop && !isWorkPage) {
+      ScrollSmoother.create({
+        smooth: 1.5, // Reduced from 2 for better performance
+        effects: true,
+        normalizeScroll: false,
+        smoothTouch: false, // Disable on touch devices
+      });
+    } else if (isDesktop && isWorkPage) {
+      // Minimal smoothing for work pages
+      ScrollSmoother.create({
+        smooth: 1,
+        effects: false, // Disable effects for better performance
+        normalizeScroll: false,
+        smoothTouch: false,
+      });
+    }
 
     // Curtain animation on page load
     gsap.to(".load-curtain", {
@@ -28,89 +47,25 @@ nullTargetWarn: false, nullTarget: null, nullTargetWarn: false });
 
     document.addEventListener("click", (e) => {
       const link = e.target.closest("a");
-      // const mainPreloader = document.querySelector(".main-preloader-od-svg");
-      // const mainPreloaderContainer = document.querySelector(".main-preloader-container");
 
       if (!link) return;
 
       const target = link.getAttribute("target");
-      // const preloadSelector = link.getAttribute("preload-svg");
 
       if (target === "_blank") return; // Let default behavior happen for new tabs
 
       e.preventDefault();
-
-      // If there's a preload-svg reference, update container
-      // if (preloadSelector) {
-      //   const svgTemplate = document.querySelector(preloadSelector);
-      //   if (svgTemplate) {
-      //     mainPreloaderContainer.innerHTML = svgTemplate.outerHTML;
-      //   } else {
-      //     console.warn(`No SVG found for selector: ${preloadSelector}`);
-      //   }
-      // }
 
       // Start curtain animation
       gsap.to(".load-curtain", {
         opacity: 1,
         duration: 0.3,
         onComplete: () => {
-          // You might want to reinsert or update preloader here again
-          // mainPreloader.classList.remove("hidden");
-          // mainPreloaderContainer.innerHTML = mainPreloader.outerHTML;
-
-          // Navigate after animation (uncomment in production)
+          // Navigate after animation
           window.location.href = link.href;
         },
       });
     });
-
-    // // Detect if the device is a touch device (optimized)
-    // const isTouchDevice =
-    //   "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-
-    // // Cursor animation for non-touch devices
-    // if (!isTouchDevice) {
-    //   let posX = 0,
-    //     posY = 0;
-    //   let mouseX = 0,
-    //     mouseY = 0;
-
-    //   // Use requestAnimationFrame for smoother, performant updates
-    //   const updateCursor = () => {
-    //     posX += (mouseX - posX) / 8;
-    //     posY += (mouseY - posY) / 8;
-    //     gsap.set(".cursor-example", {
-    //       left: posX - 1,
-    //       top: posY - 2,
-    //     });
-    //     requestAnimationFrame(updateCursor); // Continuously update the cursor
-    //   };
-
-    //   document.addEventListener("mousemove", (e) => {
-    //     mouseX = e.clientX;
-    //     mouseY = e.clientY;
-    //   });
-
-    //   // Start cursor animation
-    //   updateCursor();
-    //   let transitioning = false;
-    //   const cursor = document.querySelector(".cursor-example");
-    //   // Simplified click effect on cursor with GSAP
-    //   window.addEventListener("click", (e) => {
-    //     if (transitioning) return;
-    //     transitioning = true;
-    //     const initialScale = cursor.style.transform;
-    //     gsap.to(cursor, {
-    //       scale: 3,
-    //       duration: 0.25,
-    //       onComplete: () => {
-    //         cursor.style.transform = initialScale;
-    //         transitioning = false;
-    //       },
-    //     });
-    //   });
-    // }
   });
 </script>
 

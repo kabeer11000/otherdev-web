@@ -109,6 +109,8 @@ const { page } = project;
         height={200}
         src={project.coverImage}
         alt={project.coverImageAlt}
+        loading="eager"
+        decoding="async"
         class="mx-auto w-full object-contain"
       />
       <div class="items-center content-center flex py-[3rem]">
@@ -151,22 +153,27 @@ const { page } = project;
     <img
       inferSize
       src={page.secondCover}
+      loading="lazy"
+      decoding="async"
       class="w-full h-auto max-h-screen object-cover shadow-xl upper-slideshow-image"
       alt=""
     />
   </div>
   <div
-    class="grid h-full grid-cols-1 lg:grid-cols-2 pt-[0rem] gap-y-10-gap-x-8 gap-1 relative overflow-hidden">
+    class="grid h-full grid-cols-1 lg:grid-cols-2 pt-[0rem] gap-y-10-gap-x-8 gap-1 relative overflow-hidden"
+    id="slideshow-container">
     {
       project.page.upperSlideshow.map((image, index) => (
         <img
           inferSize
           key={image}
           src={image}
-          class="w-full h-auto upper-slideshow-image object-cover"
+          loading="lazy"
+          decoding="async"
+          class="w-full h-auto upper-slideshow-image object-cover will-change-transform"
           data-slide-direction={index % 2 === 0 ? "left" : "right"}
           alt=""
-          style={{ opacity: 0, transform: `translateX(${index % 2 === 0 ? "-100%" : "100%"})` }}
+          style={{ opacity: 0, transform: `translateX(${index % 2 === 0 ? "-20%" : "20%"})` }}
         />
       ))
     }
@@ -181,17 +188,27 @@ const { page } = project;
     </div>
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
-        gsap.to(".upper-slideshow-image", {
-          x: 0,
-          opacity: 1,
-          scrollTrigger: {
-            once: false,
-            trigger: ".upper-image-slideshow-container",
-            start: "top 20%", // When the top of the trigger hits 80% of the viewport
-            end: "bottom 10%", // When the bottom of the trigger hits 20% of the viewport
-            scrub: true, // Smoothly link animation progress to scroll
-            markers: false, // For debugging - shows start and end lines
-          },
+        // Only initialize if GSAP is available
+        if (typeof gsap === 'undefined') return;
+        
+        // Use a more performant scroll animation
+        const images = document.querySelectorAll(".upper-slideshow-image");
+        
+        images.forEach((img, index) => {
+          gsap.to(img, {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: img,
+              start: "top 90%",
+              end: "top 20%",
+              scrub: 0.5, // Reduced scrub value for better performance
+              once: true, // Animation only runs once
+              toggleActions: "play none none none"
+            },
+            ease: "power2.out",
+            duration: 0.8
+          });
         });
       });
     </script>
@@ -200,6 +217,16 @@ const { page } = project;
     :root {
       --background: var(--color-neutral-900);
       --text: var(--color-neutral-300);
+    }
+    
+    /* Performance optimizations */
+    .upper-slideshow-image {
+      contain: layout style paint;
+      transform: translateZ(0); /* Force GPU acceleration */
+    }
+    
+    #slideshow-container {
+      contain: layout;
     }
   </style>
 </Layout>
