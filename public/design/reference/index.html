@@ -2,13 +2,30 @@
   <head>
     <title>Other Dev Design Studio / Design Reference List</title>
     <meta name="description" content="OD / Website Reference Design List, Other Dev Software — otherdev.com " />
-  </head>
-  <body>
-    <iframe style="border: none; width: 100vw; height: 100vh; margin:0; padding:0;" src="https://docs.google.com/document/d/e/2PACX-1vT-9OYVU4gQFMGdrMgXdhPaa3f3_1DkWAprZ10Bnp7yObsvd55W0HyVLOdj0_yH6NFsPA1fpJD3pzvk/pub?embedded=true"></iframe>
     <style>
-      * {
-        margin:0; padding:0;
+      /* Ensure html and body take full height and width */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Important for body to take full height */
+        width: 100%;  /* Important for body to take full width */
+        overflow: hidden; /* Hide scrollbars if content slightly overflows */
+      }
+      body {
+        background: #a6a09b; /* Your preferred background color */
+      }
+      /* Style for the iframe to be full screen */
+      iframe {
+        border: none;
+        width: 100vw; /* 100% of the viewport width */
+        height: 100vh; /* 100% of the viewport height */
+        display: block; /* Ensures no extra space below the iframe */
+        margin: 0; /* Remove any default iframe margin */
+        padding: 0; /* Remove any default iframe padding */
       }
     </style>
+  </head>
+  <body>
+    <iframe src="https://docs.google.com/document/d/e/2PACX-1vT-9OYVU4gQFMGdrMgXdhPaa3f3_1DkWAprZ10Bnp7yObsvd55W0HyVLOdj0_yH6NFsPA1fpJD3pzvk/pub?embedded=true"></iframe>
   </body>
 </html>
