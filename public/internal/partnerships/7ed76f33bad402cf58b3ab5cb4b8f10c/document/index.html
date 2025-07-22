@@ -1,0 +1,1243 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Lexa&#39;s Frontend General Architecture Document</title>
+    <style>
+        html {
+            color: #1a1a1a;
+            background-color: #fdfdfd;
+        }
+
+        body {
+            margin: 0 auto;
+            max-width: 36em;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media print {
+            html {
+                background-color: white;
+            }
+
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 12pt;
+            }
+
+            p,
+            h2,
+            h3 {
+                orphans: 3;
+                widows: 3;
+            }
+
+            h2,
+            h3,
+            h4 {
+                page-break-after: avoid;
+            }
+        }
+
+        p {
+            margin: 1em 0;
+        }
+
+        a {
+            color: #1a1a1a;
+        }
+
+        a:visited {
+            color: #1a1a1a;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 1.4em;
+        }
+
+        h5,
+        h6 {
+            font-size: 1em;
+            font-style: italic;
+        }
+
+        h6 {
+            font-weight: normal;
+        }
+
+        ol,
+        ul {
+            padding-left: 1.7em;
+            margin-top: 1em;
+        }
+
+        li>ol,
+        li>ul {
+            margin-top: 0;
+        }
+
+        blockquote {
+            margin: 1em 0 1em 1.7em;
+            padding-left: 1em;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+            font-size: 85%;
+            margin: 0;
+            hyphens: manual;
+        }
+
+        pre {
+            margin: 1em 0;
+            overflow: auto;
+        }
+
+        pre code {
+            padding: 0;
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            height: 1px;
+            margin: 1em 0;
+        }
+
+        table {
+            margin: 1em 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+
+        table caption {
+            margin-bottom: 0.75em;
+        }
+
+        tbody {
+            margin-top: 0.5em;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25em 0.5em 0.25em 0.5em;
+        }
+
+        td {
+            padding: 0.125em 0.5em 0.25em 0.5em;
+        }
+
+        header {
+            margin-bottom: 4em;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+
+        #TOC ul {
+            padding-left: 1.3em;
+        }
+
+        #TOC>ul {
+            padding-left: 0;
+        }
+
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code {
+            white-space: pre-wrap;
+        }
+
+        span.smallcaps {
+            font-variant: small-caps;
+        }
+
+        div.columns {
+            display: flex;
+            gap: min(4vw, 1.5em);
+        }
+
+        div.column {
+            flex: auto;
+            overflow-x: auto;
+        }
+
+        div.hanging-indent {
+            margin-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        ul.task-list[class] {
+            list-style: none;
+        }
+
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8em;
+            margin: 0 0.8em 0.2em -1.6em;
+            vertical-align: middle;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+        }
+
+        pre>code.sourceCode {
+            white-space: pre;
+            position: relative;
+        }
+
+        pre>code.sourceCode>span {
+            display: inline-block;
+            line-height: 1.25;
+        }
+
+        pre>code.sourceCode>span:empty {
+            height: 1.2em;
+        }
+
+        .sourceCode {
+            overflow: visible;
+        }
+
+        code.sourceCode>span {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        div.sourceCode {
+            margin: 1em 0;
+        }
+
+        pre.sourceCode {
+            margin: 0;
+        }
+
+        @media screen {
+            div.sourceCode {
+                overflow: auto;
+            }
+        }
+
+        @media print {
+            pre>code.sourceCode {
+                white-space: pre-wrap;
+            }
+
+            pre>code.sourceCode>span {
+                text-indent: -5em;
+                padding-left: 5em;
+            }
+        }
+
+        pre.numberSource code {
+            counter-reset: source-line 0;
+        }
+
+        pre.numberSource code>span {
+            position: relative;
+            left: -4em;
+            counter-increment: source-line;
+        }
+
+        pre.numberSource code>span>a:first-child::before {
+            content: counter(source-line);
+            position: relative;
+            left: -1em;
+            text-align: right;
+            vertical-align: baseline;
+            border: none;
+            display: inline-block;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: 0 4px;
+            width: 4em;
+            color: #aaaaaa;
+        }
+
+        pre.numberSource {
+            margin-left: 3em;
+            border-left: 1px solid #aaaaaa;
+            padding-left: 4px;
+        }
+
+        div.sourceCode {}
+
+        @media screen {
+            pre>code.sourceCode>span>a:first-child::before {
+                text-decoration: underline;
+            }
+        }
+
+        code span.al {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        code span.an {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        code span.at {
+            color: #7d9029;
+        }
+
+        code span.bn {
+            color: #40a070;
+        }
+
+        code span.bu {
+            color: #008000;
+        }
+
+        code span.cf {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        code span.ch {
+            color: #4070a0;
+        }
+
+        code span.cn {
+            color: #880000;
+        }
+
+        code span.co {
+            color: #60a0b0;
+            font-style: italic;
+        }
+
+        code span.cv {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        code span.do {
+            color: #ba2121;
+            font-style: italic;
+        }
+
+        code span.dt {
+            color: #902000;
+        }
+
+        code span.dv {
+            color: #40a070;
+        }
+
+        code span.er {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        code span.ex {}
+
+        code span.fl {
+            color: #40a070;
+        }
+
+        code span.fu {
+            color: #06287e;
+        }
+
+        code span.im {
+            color: #008000;
+            font-weight: bold;
+        }
+
+        code span.in {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        code span.kw {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        code span.op {
+            color: #666666;
+        }
+
+        code span.ot {
+            color: #007020;
+        }
+
+        code span.pp {
+            color: #bc7a00;
+        }
+
+        code span.sc {
+            color: #4070a0;
+        }
+
+        code span.ss {
+            color: #bb6688;
+        }
+
+        code span.st {
+            color: #4070a0;
+        }
+
+        code span.va {
+            color: #19177c;
+        }
+
+        code span.vs {
+            color: #4070a0;
+        }
+
+        code span.wa {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="title-block-header">
+        <h1 class="title">Lexa&#39;s Frontend General Architecture Document</h1>
+        <p class="body">Other Dev { Kabeer Jaffri < kabeer@otherdev.com > }</p>
+        <p class="body">Last Updated 22/07/2025</p>
+    </header>
+    <pre class="mermaid">
+        flowchart TD
+
+    subgraph User_Device
+        A[User's Browser]
+    end
+
+    subgraph Vercel
+        B[Frontend: Astro + Yoopta-Editor]
+    end
+
+    subgraph Google_Cloud_Platform
+        C[API Gateway]
+        D[FastAPI: Main API Service]
+        E[FastAPI: WebSocket Service for Real-time]
+        F[FastAPI: AI Co-pilot Service]
+        G[PostgreSQL Database]
+        H[Google_Cloud_Storage_GCS]
+    end
+
+    subgraph Third_Party
+        I[LLM Provider: OpenAI]
+        J[Google Identity Platform]
+    end
+
+    A -- HTTPS --> B
+    B -- HTTPS/API Calls --> C
+    B -- WebSocket (WSS) --> E
+    B -- Client-Side Google Auth SDK --> J
+    J -- Google ID Token --> B
+    B -- Google ID Token --> C
+    C -- Routes to --> D
+    C -- Routes to --> F
+    D -- CRUD Ops --> G
+    D -- Generates Presigned URLs --> H
+    E -- Syncs Document State (CRDTs) --> B
+    E -- Persists Final State --> D
+    F -- API Call --> I
+    B -- Direct Upload to --> H
+    </pre>
+    <p>Version: 1.0 (Preliminary) Date: July 22, 2025</p>
+    <h3 id="summary"><strong>1. Summary</strong></h3>
+    <p>This document describes the technical architecture for an innovative
+        platform designed for the legal industry. The product is a secure,
+        Notion-like collaborative editor with integrated AI assistance and
+        DocuSign-like electronic signature capabilities.</p>
+    <p>The core architectural goals are <strong>data integrity</strong>,
+        <strong>security</strong>, <strong>real-time collaboration</strong>, and
+        <strong>scalability</strong>, while ensuring the client retains full
+        <strong>data ownership</strong> by avoiding third-party data-hosting
+        services for core content.
+    </p>
+    <h3 id="system-architecture-overview"><strong>2. System Architecture
+            Overview</strong></h3>
+    <p>The system is designed with a modern, decoupled architecture. The
+        frontend is a static-first web application, which communicates with a
+        set of backend microservices for business logic, data persistence, and
+        real-time communication.</p>
+    <h3 id="core-components"><strong>3. Core Components</strong></h3>
+    <h4 id="frontend"><strong>3.1. Frontend</strong></h4>
+    <ul>
+        <li><strong>Framework:</strong> <strong>Astro</strong>. Chosen for its
+            excellent performance-by-default philosophy. It ships zero JavaScript
+            for static content and uses an “islands” architecture to hydrate
+            interactive components like the editor, ensuring fast initial load
+            times.</li>
+        <li><strong>Editor:</strong> <strong>Yoopta-Editor</strong>. A
+            block-based editor built on <strong>Slate.js</strong>. This is a crucial
+            choice as it is self-hostable, giving us full control over the editor’s
+            data and functionality. It stores documents as a structured JSON object,
+            which is ideal for our needs.</li>
+        <li><strong>State Management for Forms:</strong>
+            <strong>Zustand</strong>. A fast, lightweight, and scalable
+            state-management solution that offers a simple API for managing local
+            component state, particularly effective for handling complex form
+            data.
+        </li>
+        <li><strong>Deployment:</strong> <strong>Vercel</strong>. Perfect for
+            hosting an Astro-based frontend, providing automatic builds,
+            deployments, and a global CDN for optimal performance.</li>
+    </ul>
+    <h4 id="backend-services"><strong>3.2. Backend Services</strong></h4>
+    <p>The backend, built with Python’s <strong>FastAPI</strong> framework
+        and hosted on <strong>GCP</strong> (e.g., on Cloud Run or GKE), is split
+        into logical microservices for clarity and scalability.</p>
+    <ul>
+        <li><strong>Main API Service</strong>: Handles core business logic,
+            including user authentication (JWT, Google Identity), document CRUD
+            (Create, Read, Update, Delete) operations, user management, and
+            generating presigned URLs for direct GCS uploads.</li>
+        <li><strong>WebSocket Service</strong>: Manages all real-time
+            collaborative connections. It receives document updates (CRDT diffs)
+            from one client, processes them, and broadcasts them to all other
+            clients in the same document session.</li>
+        <li><strong>AI Co-pilot Service</strong>: Acts as a secure proxy between
+            our application and the <strong>OpenAI</strong> Large Language Model
+            (LLM) provider. It will handle features like:
+            <ul>
+                <li><strong>Clause Generation</strong>: Drafting legal clauses from
+                    prompts.</li>
+                <li><strong>Document Summarization</strong>: Creating executive
+                    summaries.</li>
+                <li><strong>Risk Analysis</strong>: Identifying potentially problematic
+                    language.</li>
+            </ul>
+            This service manages API keys, caches common requests, and formats
+            prompts and responses.
+        </li>
+    </ul>
+    <h4 id="data-layer"><strong>3.3. Data Layer</strong></h4>
+    <ul>
+        <li><strong>Primary Database:</strong> <strong>PostgreSQL</strong>. A
+            powerful and reliable open-source relational database.
+            <ul>
+                <li><strong>Document Content</strong>: The JSON output from
+                    Yoopta-Editor will be stored directly in a <code>JSONB</code> column.
+                    This is highly efficient and allows for powerful indexing and querying
+                    of nested data within the documents.</li>
+                <li><strong>User Data &amp; Metadata</strong>: Standard relational
+                    tables will be used for users, roles, permissions, document metadata,
+                    etc.</li>
+            </ul>
+        </li>
+        <li><strong>File &amp; Blob Storage:</strong> <strong>Google Cloud
+                Storage (GCS)</strong>. Used for storing all unstructured data.
+            <ul>
+                <li><strong>Media Assets</strong>: Images and other media uploaded
+                    within documents. The frontend will use <strong>presigned URLs</strong>
+                    to upload files directly to GCS for efficiency.</li>
+                <li><strong>Signed Documents</strong>: Finalized, cryptographically
+                    signed PDFs will be stored in GCS as immutable artifacts.</li>
+                <li><strong>Backups</strong>: Regular backups of the PostgreSQL database
+                    will be stored in GCS.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="key-feature-implementation"><strong>4. Key Feature
+            Implementation</strong></h3>
+    <h4 id="real-time-collaboration"><strong>4.1. Real-Time
+            Collaboration</strong></h4>
+    <p>This is a critical and complex feature, handled robustly by the
+        chosen stack.</p>
+    <ol type="1">
+        <li><strong>Editor Changes</strong>: A user types in the Yoopta-Editor.
+            The underlying Slate.js framework generates a series of operations
+            (e.g., <code>insert_text</code>, <code>split_node</code>).</li>
+        <li><strong>CRDT Conversion</strong>: The <code>@slate-yjs/core</code>
+            library intercepts these operations and converts them into a
+            <strong>Yjs</strong> update. Yjs is a Conflict-Free Replicated Data Type
+            (CRDT) library that ensures concurrent edits from multiple users merge
+            correctly without conflicts.
+        </li>
+        <li><strong>WebSocket Transmission</strong>: This small Yjs update (a
+            binary diff) is sent from the client’s browser to our Python
+            <strong>WebSocket Service</strong> over a secure WebSocket connection.
+            Each user’s Yjs instance manages its own state and sends only the
+            changes (diffs).
+        </li>
+        <li><strong>Backend Broadcast</strong>: The server does not need to
+            understand the content of the diff. It simply broadcasts the Yjs update
+            to all other clients connected to that specific document’s session.</li>
+        <li><strong>Client-Side Merge</strong>: Each receiving client’s Yjs
+            instance applies the update to its local document model. The
+            <code>@slate-yjs/core</code> library then seamlessly updates the
+            Yoopta-Editor to reflect the changes, ensuring all collaborators see the
+            same, merged document state.
+        </li>
+        <li><strong>Persistence</strong>: The backend will periodically (e.g.,
+            every few seconds of inactivity or upon significant changes) save the
+            current merged state of the Yjs document from server memory to the
+            PostgreSQL <code>JSONB</code> column to ensure durability and allow for
+            document retrieval even if no active WebSocket sessions exist.</li>
+    </ol>
+    <h4 id="e-signature-workflow"><strong>4.2. E-Signature
+            Workflow</strong></h4>
+    <p>This feature combines frontend UI, backend logic, and cryptographic
+        integrity.</p>
+    <ol type="1">
+        <li><strong>Placement</strong>: The user places a “Signature” block
+            within the Yoopta-Editor document.</li>
+        <li><strong>Finalization</strong>: To initiate signing, the document is
+            locked from further editing to ensure immutability during the signing
+            process. The backend requests the current document content (JSONB) from
+            PostgreSQL.</li>
+        <li><strong>PDF Generation</strong>: The backend then renders the
+            document’s content (the <code>content_jsonb</code>) as a high-fidelity
+            PDF. This typically involves:
+            <ul>
+                <li><strong>HTML Conversion</strong>: The <code>content_jsonb</code> is
+                    first converted into a structured HTML representation on the server.
+                    This can be achieved using a server-side rendering library or a custom
+                    renderer that understands the Yoopta-Editor’s JSON structure.</li>
+                <li><strong>PDF Rendering</strong>: The generated HTML is then fed into
+                    a dedicated PDF rendering engine. For a high-fidelity and legally
+                    admissible representation, a headless browser solution (e.g., running
+                    <strong>Puppeteer</strong> or <strong>Playwright</strong> on the
+                    backend) is often preferred, as it accurately renders HTML and CSS into
+                    a pixel-perfect PDF. Alternatively, robust libraries like WeasyPrint
+                    could be considered.
+                </li>
+                <li>The finalized PDF is then stored in Google Cloud Storage (GCS).</li>
+            </ul>
+        </li>
+        <li><strong>Hashing</strong>: The backend calculates a cryptographic
+            hash (e.g., SHA-256) of the finalized PDF stored in GCS. This hash is a
+            unique digital fingerprint of the document.</li>
+        <li><strong>Signing</strong>: The user is prompted to sign (by typing,
+            drawing, or clicking). The signature image, user ID, timestamp, and the
+            <strong>document hash</strong> are securely sent to the backend.
+        </li>
+        <li><strong>Sealing</strong>: The backend combines the signature data
+            with the document hash and creates a legally binding audit trail, which
+            is stored securely in PostgreSQL. The signed PDF can optionally be
+            embedded with a digital signature certificate for enhanced verification
+            and tamper detection.</li>
+    </ol>
+    <h3 id="security"><strong>5. Security</strong></h3>
+    <p>For a legal tech application, security is paramount.</p>
+    <ul>
+        <li><strong>Authentication</strong>: We will use <strong>JSON Web Tokens
+                (JWTs)</strong>. Access tokens and refresh tokens will be stored in
+            <strong>secure, HttpOnly cookies</strong> to prevent XSS attacks from
+            stealing credentials. Integration with <strong>Google Identity
+                Platform</strong> will allow users to sign in using their existing
+            Google accounts, with our backend validating Google ID tokens and
+            issuing our platform-specific JWTs.
+        </li>
+        <li><strong>Authorization</strong>: <strong>Role-Based Access Control
+                (RBAC)</strong> will be implemented in the Main API Service to ensure
+            users can only access and modify documents they are permitted to.</li>
+        <li><strong>Encryption</strong>: All data will be encrypted <strong>in
+                transit</strong> (TLS 1.3 for all HTTP and WebSocket traffic) and
+            <strong>at rest</strong> (using GCP’s default encryption for PostgreSQL
+            and GCS).
+        </li>
+        <li><strong>Audit Trails</strong>: All significant actions (document
+            creation, edits, signing, sharing) will be logged with user IDs and
+            timestamps to create an immutable audit trail for compliance and
+            forensic purposes.</li>
+    </ul>
+    <hr />
+    <h3 id="feasibility-flaws-and-mitigations"><strong>6. Feasibility,
+            Flaws, and Mitigations</strong></h3>
+    <p>This architecture is robust and feasible, but it’s important to
+        acknowledge its complexities and potential risks.</p>
+    <table>
+        <colgroup>
+            <col style="width: 31%" />
+            <col style="width: 36%" />
+            <col style="width: 31%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th style="text-align: left;"><strong>Component / Feature</strong></th>
+                <th style="text-align: left;"><strong>Potential Flaw or
+                        Risk</strong></th>
+                <th style="text-align: left;"><strong>Mitigation Strategy</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left;"><strong>Real-time
+                        Collaboration</strong></td>
+                <td style="text-align: left;">The logic for CRDTs and WebSocket state
+                    management is complex. Bugs can lead to desynchronization or data
+                    loss.</td>
+                <td style="text-align: left;"><strong>Use established libraries</strong>
+                    like Yjs and <code>@slate-yjs/core</code>. Implement comprehensive
+                    automated testing for collaborative scenarios. The backend broadcast
+                    logic is simple, reducing server-side complexity.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>Yoopta-Editor</strong></td>
+                <td style="text-align: left;">Being a less-common open-source project
+                    than, say, Tiptap, it may have a smaller community, fewer plugins, and
+                    potentially undiscovered bugs.</td>
+                <td style="text-align: left;">Allocate development time for potential
+                    bug fixing or feature extension internally. The benefits of self-hosting
+                    and data control outweigh this risk for our use case.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>PDF Generation</strong></td>
+                <td style="text-align: left;">Ensuring the generated PDF is a 100%
+                    pixel-perfect, legally-admissible representation of the web editor’s
+                    content is challenging, especially with complex styling or custom
+                    blocks. [1]</td>
+                <td style="text-align: left;">Use a high-fidelity PDF generation library
+                    in the backend (e.g., a headless browser service like Puppeteer or
+                    Playwright). Conduct extensive testing with complex legal document
+                    formats and provide clear disclaimers if visual fidelity cannot be
+                    absolutely guaranteed in all edge cases.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>AI Integration</strong></td>
+                <td style="text-align: left;">AI models (OpenAI) can be expensive at
+                    scale and may “hallucinate” or provide inaccurate/biased information,
+                    creating legal liability.</td>
+                <td style="text-align: left;">Implement strict cost monitoring and
+                    rate-limiting. <strong>Crucially, frame all AI features as “suggestions”
+                        or “drafts”</strong> that require mandatory human review and approval.
+                    Never allow the AI to autonomously finalize legal text.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>WebSocket Scaling</strong></td>
+                <td style="text-align: left;">Stateful WebSocket connections are harder
+                    to scale horizontally than stateless HTTP APIs.</td>
+                <td style="text-align: left;">Start with a single powerful server. For
+                    scaling, use a backplane like <strong>Redis Pub/Sub</strong>. When a
+                    client sends a message to one server instance, that instance publishes
+                    the message to a Redis channel, and all other server instances
+                    subscribed to that channel receive it and broadcast it to their
+                    connected clients.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="references"><strong>7. References</strong></h3>
+    <ul>
+        <li><strong>Astro Framework:</strong> <a href="https://astro.build/">https://astro.build/</a></li>
+        <li><strong>Yoopta-Editor:</strong> <a
+                href="https://yoopta-editor.vercel.app/">https://yoopta-editor.vercel.app/</a></li>
+        <li><strong>Slate.js (Core of Yoopta):</strong> <a href="https://www.slatejs.org/">https://www.slatejs.org/</a>
+        </li>
+        <li><strong>Yjs (CRDT Library):</strong> <a href="https://yjs.dev/">https://yjs.dev/</a></li>
+        <li><strong>Zustand (State Management):</strong> <a
+                href="https://zustand-demo.pmnd.rs/">https://zustand-demo.pmnd.rs/</a></li>
+        <li><strong>FastAPI Framework:</strong> <a
+                href="https://fastapi.tiangolo.com/">https://fastapi.tiangolo.com/</a></li>
+        <li><strong>PostgreSQL JSONB Type:</strong> <a
+                href="https://www.postgresql.org/docs/current/datatype-json.html">https://www.postgresql.org/docs/current/datatype-json.html</a>
+        </li>
+        <li><strong>Google Identity Platform:</strong> <a
+                href="https://cloud.google.com/identity-platform">https://cloud.google.com/identity-platform</a></li>
+        <li>[1]: Discussion on rendering Slate.js content to PDF: <a
+                href="https://github.com/ianstormtaylor/slate/discussions/5577">https://github.com/ianstormtaylor/slate/discussions/5577</a>
+        </li>
+    </ul>
+    <h1 id="appendix-i">Appendix I</h1>
+    <h3 id="a.1-postgresql-data-schema-example"><strong>A.1: PostgreSQL Data
+            Schema (Example)</strong></h3>
+    <p>This SQL illustrates the core relational schema. It is designed to
+        enforce data integrity, establish relationships, and leverage
+        PostgreSQL’s advanced data types.</p>
+    <div class="sourceCode" id="cb2">
+        <pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Users table stores authentication and identity information</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> users (</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> UUID <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">DEFAULT</span> gen_random_uuid(),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    email TEXT <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    password_hash TEXT, <span class="co">-- Nullable if only social login (e.g., Google) is used</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    google_id TEXT <span class="kw">UNIQUE</span>, <span class="co">-- Stores Google user ID for linkage</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    full_name TEXT,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    created_at TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW(),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    updated_at TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">-- Documents table stores metadata and the core content in JSONB format</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> documents (</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> UUID <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">DEFAULT</span> gen_random_uuid(),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    title TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    owner_id UUID <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> users(<span class="kw">id</span>) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">CASCADE</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- The core of the editor content, stored efficiently as binary JSON</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    content_jsonb JSONB,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    created_at TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW(),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    updated_at TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> idx_documents_owner <span class="kw">ON</span> documents(owner_id);</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">-- Permissions join table for Role-Based Access Control (RBAC)</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TYPE</span> document_role <span class="kw">AS</span> ENUM (<span class="st">&#39;owner&#39;</span>, <span class="st">&#39;editor&#39;</span>, <span class="st">&#39;viewer&#39;</span>);</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> document_permissions (</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> UUID <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">DEFAULT</span> gen_random_uuid(),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    document_id UUID <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> documents(<span class="kw">id</span>) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">CASCADE</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    user_id UUID <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> users(<span class="kw">id</span>) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">CASCADE</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="kw">role</span> document_role <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">UNIQUE</span>(document_id, user_id) <span class="co">-- Ensures a user has only one role per document</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">-- Signatures table to log and verify electronic signatures</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> signatures (</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> UUID <span class="kw">PRIMARY</span> <span class="kw">KEY</span> <span class="kw">DEFAULT</span> gen_random_uuid(),</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    document_id UUID <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> documents(<span class="kw">id</span>) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">RESTRICT</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    user_id UUID <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> users(<span class="kw">id</span>) <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">RESTRICT</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- SHA-256 hash of the finalized document (PDF) at the time of signing</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    document_hash TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    signature_data_svg TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>, <span class="co">-- The drawn or generated signature image</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    signed_at TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW(),</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    ip_address INET,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- Optional: Stores certificate details if using advanced digital signatures</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    digital_certificate_info JSONB</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">-- Audit log for tracking critical events for compliance and security</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TYPE</span> audit_event_type <span class="kw">AS</span> ENUM (<span class="st">&#39;user_login&#39;</span>, <span class="st">&#39;google_login&#39;</span>, <span class="st">&#39;doc_create&#39;</span>, <span class="st">&#39;doc_edit&#39;</span>, <span class="st">&#39;doc_sign&#39;</span>, <span class="st">&#39;permission_change&#39;</span>, <span class="st">&#39;document_access&#39;</span>);</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> audit_log (</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="kw">id</span> BIGSERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    user_id UUID <span class="kw">REFERENCES</span> users(<span class="kw">id</span>),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    event_type audit_event_type <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    details JSONB,</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    event_time TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> NOW()</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>);</span></code></pre>
+    </div>
+    <hr />
+    <h3 id="a.2-api-endpoint-definitions-example"><strong>A.2: API Endpoint
+            Definitions (Example)</strong></h3>
+    <p>The following defines the contract for key RESTful and WebSocket
+        endpoints.</p>
+    <table>
+        <colgroup>
+            <col style="width: 7%" />
+            <col style="width: 26%" />
+            <col style="width: 66%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th style="text-align: left;">Method</th>
+                <th style="text-align: left;">Endpoint</th>
+                <th style="text-align: left;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/auth/register</code></td>
+                <td style="text-align: left;">Registers a new user with
+                    email/password.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/auth/login</code></td>
+                <td style="text-align: left;">Authenticates a user with email/password
+                    and returns session cookies.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/auth/google-login</code></td>
+                <td style="text-align: left;">Receives Google ID token, verifies it, and
+                    issues platform-specific JWTs.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/auth/refresh</code></td>
+                <td style="text-align: left;">Uses a refresh token to issue a new access
+                    token.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>GET</strong></td>
+                <td style="text-align: left;"><code>/api/documents</code></td>
+                <td style="text-align: left;">Lists all documents accessible to the
+                    authenticated user.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/documents</code></td>
+                <td style="text-align: left;">Creates a new document. Requires
+                    <code>title</code> in the request body.
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>GET</strong></td>
+                <td style="text-align: left;"><code>/api/documents/{docId}</code></td>
+                <td style="text-align: left;">Retrieves metadata for a single
+                    document.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>PUT</strong></td>
+                <td style="text-align: left;"><code>/api/documents/{docId}</code></td>
+                <td style="text-align: left;">Updates document metadata (e.g.,
+                    title).</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>POST</strong></td>
+                <td style="text-align: left;"><code>/api/documents/{docId}/sign</code></td>
+                <td style="text-align: left;">Initiates the signing process, locking the
+                    document.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>GET</strong></td>
+                <td style="text-align: left;"><code>/api/documents/{docId}/pdf</code></td>
+                <td style="text-align: left;">Generates and returns the finalized PDF of
+                    the document.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>WS</strong></td>
+                <td style="text-align: left;"><code>/ws/documents/{docId}</code></td>
+                <td style="text-align: left;">Establishes a WebSocket for real-time
+                    collaboration.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Example: Create Document</strong></p>
+    <ul>
+        <li><strong>Request:</strong> <code>POST /api/documents</code></li>
+        <li><strong>Body:</strong>
+            <code>{ &quot;title&quot;: &quot;Master Service Agreement&quot; }</code>
+        </li>
+        <li><strong>Response (201 Created):</strong>
+            <code>{ &quot;id&quot;: &quot;uuid-goes-here&quot;, &quot;title&quot;: &quot;Master Service Agreement&quot;, &quot;owner_id&quot;: &quot;current-user-uuid&quot;, ... }</code>
+        </li>
+    </ul>
+    <hr />
+    <h3 id="a.3-json-web-token-jwt-structure"><strong>A.3: JSON Web Token
+            (JWT) Structure</strong></h3>
+    <p>Our stateless session management relies on a structured JWT stored in
+        a secure, <code>HttpOnly</code> cookie.</p>
+    <table>
+        <colgroup>
+            <col style="width: 3%" />
+            <col style="width: 7%" />
+            <col style="width: 89%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th style="text-align: left;">Claim</th>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: left;">Description &amp; Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left;"><code>iss</code></td>
+                <td style="text-align: left;">Issuer</td>
+                <td style="text-align: left;">Identifies the service that issued the
+                    token. <code>{&quot;iss&quot;: &quot;legal-ai-platform&quot;}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>sub</code></td>
+                <td style="text-align: left;">Subject</td>
+                <td style="text-align: left;">The unique identifier of the user (primary
+                    key). <code>{&quot;sub&quot;: &quot;user-uuid-1234&quot;}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>aud</code></td>
+                <td style="text-align: left;">Audience</td>
+                <td style="text-align: left;">The intended recipient of the token
+                    (frontend client). <code>{&quot;aud&quot;: &quot;webapp&quot;}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>exp</code></td>
+                <td style="text-align: left;">Expiration Time</td>
+                <td style="text-align: left;">Unix timestamp defining token expiry.
+                    Prevents replay attacks. <code>{&quot;exp&quot;: 1753234800}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>iat</code></td>
+                <td style="text-align: left;">Issued At</td>
+                <td style="text-align: left;">Unix timestamp of when the token was
+                    issued. <code>{&quot;iat&quot;: 1753231200}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>jti</code></td>
+                <td style="text-align: left;">JWT ID</td>
+                <td style="text-align: left;">A unique identifier for the token. Crucial
+                    for token blacklisting (e.g., upon logout or password change) to prevent
+                    replay of old tokens. <code>{&quot;jti&quot;: &quot;unique-random-string&quot;}</code></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><code>role</code></td>
+                <td style="text-align: left;">Custom Role</td>
+                <td style="text-align: left;">The user’s role, used for authorization
+                    decisions in middleware. <code>{&quot;role&quot;: &quot;editor&quot;}</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <h3 id="a.4-security-hardening-compliance-checklist"><strong>A.4:
+            Security Hardening &amp; Compliance Checklist</strong></h3>
+    <table>
+        <colgroup>
+            <col style="width: 8%" />
+            <col style="width: 37%" />
+            <col style="width: 53%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th style="text-align: left;">Domain</th>
+                <th style="text-align: left;">Checklist Item</th>
+                <th style="text-align: left;">Rationale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left;"><strong>Infrastructure</strong></td>
+                <td style="text-align: left;">All services deployed within a VPC with
+                    restrictive firewall rules.</td>
+                <td style="text-align: left;">Limits exposure to the public
+                    internet.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Use GCP IAM with the Principle of Least
+                    Privilege for all service accounts.</td>
+                <td style="text-align: left;">Prevents credential abuse and lateral
+                    movement.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Enforce HTTPS/WSS on all load balancers
+                    and endpoints.</td>
+                <td style="text-align: left;">Ensures data is encrypted in transit.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>Application</strong></td>
+                <td style="text-align: left;">Use Pydantic models in FastAPI for
+                    automatic input validation.</td>
+                <td style="text-align: left;">Prevents mass assignment vulnerabilities
+                    and invalid data.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Implement a strict Content Security Policy
+                    (CSP) header.</td>
+                <td style="text-align: left;">Mitigates XSS and data injection
+                    attacks.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Use a robust rate-limiter on
+                    authentication and sensitive API endpoints.</td>
+                <td style="text-align: left;">Protects against brute-force attacks and
+                    denial-of-service.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Perform regular dependency scanning with
+                    tools like Snyk or Dependabot.</td>
+                <td style="text-align: left;">Proactively identifies and patches
+                    vulnerable libraries.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Sanitize all user-generated content (e.g.,
+                    inputs, comments) before display.</td>
+                <td style="text-align: left;">Prevents injection attacks like XSS.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><strong>Database</strong></td>
+                <td style="text-align: left;">Enforce Row-Level Security (RLS) policies
+                    in PostgreSQL.</td>
+                <td style="text-align: left;">Ensures users can only query data they are
+                    explicitly granted access to, providing a critical security layer.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Use a dedicated, permission-limited
+                    database user for the application.</td>
+                <td style="text-align: left;">Prevents the application from performing
+                    destructive actions like <code>DROP TABLE</code>.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"></td>
+                <td style="text-align: left;">Implement parameterized queries to prevent
+                    SQL injection.</td>
+                <td style="text-align: left;">Essential security measure against
+                    malicious database input.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <h1 id="appendix-ii">Appendix II</h1>
+    <h3 id="a.5-authentication-with-astro-and-backend-microservices"><strong>A.5:
+            Authentication with Astro and Backend Microservices</strong></h3>
+    <p>This design pattern describes secure authentication in an Astro
+        frontend interacting with a microservice backend via REST APIs, while
+        incorporating Google authentication. The core principle involves
+        leveraging Astro’s server-side capabilities (API routes and Middleware)
+        as a secure intermediary for all authentication and authorized data
+        requests.</p>
+    <ol type="1">
+        <li><strong>User Initiates Login:</strong>
+            <ul>
+                <li><strong>Email/Password:</strong> User submits credentials via an
+                    Astro form (managed with Zustand). This request is sent to an Astro API
+                    route (e.g., <code>/api/auth/login</code>).</li>
+                <li><strong>Google Authentication:</strong> The client-side Astro
+                    application uses the Google Identity Platform (or Firebase
+                    Authentication SDK) to initiate the Google sign-in flow. Upon successful
+                    authentication with Google, a <strong>Google ID Token</strong> is
+                    received client-side. This ID token is then securely sent from the Astro
+                    frontend to a dedicated Astro API route (e.g.,
+                    <code>/api/auth/google</code>).
+                </li>
+            </ul>
+        </li>
+        <li><strong>Astro API Route as Proxy:</strong>
+            <ul>
+                <li>The Astro API route receives the user’s credentials (email/password)
+                    or the Google ID Token.</li>
+                <li>It then makes a <strong>server-to-server (S2S) request</strong> to
+                    the <code>Main API Service</code>’s authentication endpoint (e.g.,
+                    <code>/api/auth/login</code> or <code>/api/auth/google-login</code>).
+                    This keeps the backend microservice endpoints private from the
+                    client.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Backend Authentication and JWT Generation:</strong>
+            <ul>
+                <li>For email/password login, the <code>Main API Service</code>
+                    authenticates the user against the <code>users</code> table.</li>
+                <li>For Google login, the <code>Main API Service</code> receives the
+                    Google ID Token. It then performs a <strong>server-side
+                        validation</strong> of this Google ID Token with Google’s authentication
+                    servers (using a library like <code>google-auth-library</code> in
+                    Python).</li>
+                <li>Upon successful validation, the <code>Main API Service</code> either
+                    registers a new user (linking their Google ID) or logs in an existing
+                    user.</li>
+                <li>Critically, the <code>Main API Service</code> then <strong>generates
+                        its own platform-specific JWTs</strong> (access token and refresh token)
+                    for the authenticated user. These JWTs contain claims relevant to our
+                    application’s authorization model (e.g., <code>user_id</code>,
+                    <code>role</code>, <code>jti</code>).
+                </li>
+            </ul>
+        </li>
+        <li><strong>Secure Cookie Setting (Astro):</strong>
+            <ul>
+                <li>The <code>Main API Service</code> sends these JWTs back to the Astro
+                    API route.</li>
+                <li>The Astro API route, operating server-side, then securely sets these
+                    JWTs (or a session ID linked to them) as <strong><code>HttpOnly</code>
+                        and <code>Secure</code> cookies</strong> in the user’s browser.
+                    <code>HttpOnly</code> prevents client-side JavaScript access, mitigating
+                    XSS risks, and <code>Secure</code> ensures cookies are only sent over
+                    HTTPS.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Route Protection and Authenticated Data Fetching (Astro
+                Middleware):</strong>
+            <ul>
+                <li><strong>Astro Middleware</strong> is used to protect routes. For
+                    every incoming request to a protected page or API route, the middleware
+                    intercepts it.</li>
+                <li>The middleware accesses the <code>HttpOnly</code> cookie containing
+                    the JWT.</li>
+                <li>It then makes a lightweight <strong>server-to-server call</strong>
+                    to the <code>Main API Service</code> (e.g.,
+                    <code>/api/auth/verify-token</code>) to validate the JWT’s signature,
+                    expiration, and potentially check if the <code>jti</code> is
+                    blacklisted.
+                </li>
+                <li>If the token is valid, the middleware allows the request to proceed
+                    and can augment the request context with user information. If invalid or
+                    missing, it redirects the user to the login page or returns an
+                    unauthorized error.</li>
+                <li>For server-side rendering (SSR) or data fetching in Astro (e.g.,
+                    <code>Astro.locals</code> or data fetches during build time for SSG),
+                    the Astro server accesses the <code>HttpOnly</code> cookie to include
+                    the valid JWT in requests to other backend microservices (Main API, AI
+                    Co-pilot), ensuring all sensitive interactions with microservices occur
+                    server-to-server.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Logout:</strong>
+            <ul>
+                <li>A logout request from the Astro frontend is sent to an Astro API
+                    route.</li>
+                <li>This route then informs the <code>Main API Service</code> to
+                    invalidate the refresh token (e.g., by adding its <code>jti</code> to a
+                    blacklist in Redis or the database).</li>
+                <li>Finally, the Astro API route clears the <code>HttpOnly</code>
+                    cookies from the user’s browser, effectively ending the session.</li>
+            </ul>
+        </li>
+    </ol>
+    <p>This approach ensures that sensitive JWTs are never directly exposed
+        to client-side JavaScript, maintaining a strong security posture while
+        providing a seamless user experience.</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.9.0/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+
+</html>
