@@ -5,42 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7ed76f33bad402cf58b3ab5cb4b8f10c</title>
     <style>
-        /* Basic Reset & Body Styling */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Prevents scrollbars on the main page */
-            font-family: Arial, sans-serif; /* Just for demo text, not required for iframe */
+            font-family: Arial, sans-serif;
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack children vertically */
         }
 
-        /* iFrame Container */
         .iframe-container {
+            flex-grow: 1; /* Allows the iframe container to take up available space */
             position: relative;
             width: 100%;
-            height: 100%; /* Makes the container take full viewport height */
-            overflow: hidden; /* Hides any overflow from the iframe itself if it tries to break out */
+            overflow: hidden;
         }
 
-        /* iFrame Styling */
         .iframe-container iframe {
-            position: absolute; /* Allows for precise positioning within the container */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none; /* Removes default iframe border */
-            /* Optional: Add a subtle shadow if you like */
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-        }
-
-        /* Optional: Content outside the iframe for demonstration */
-        .content-above-iframe {
-            background-color: #f0f0f0;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ccc;
+            border: none;
         }
 
         .content-below-iframe {
@@ -48,12 +36,7 @@
             padding: 10px;
             text-align: center;
             border-top: 1px solid #ccc;
-        }
-
-        /* Media Queries for potential responsiveness adjustments (less common for fullscreen iframes) */
-        @media (max-width: 768px) {
-            /* You might not need specific adjustments here if the iframe is truly full screen */
-            /* But if you had other elements, this is where you'd adjust them */
+            flex-shrink: 0; /* Prevents this content from shrinking */
         }
     </style>
 </head>
@@ -64,7 +47,7 @@
     </div>
 
     <div class="content-below-iframe">
-        <p>Doocument Protected by HTML Basic Auth, Please refer to your manager for credentials to view this document. <i><strong>Other Dev</strong> Software</i></p>
+        <p>Document Protected by HTML Basic Auth, Please refer to your manager for credentials to view this document. <i><strong>Other Dev</strong> Software</i></p>
     </div>
 
 </body>
