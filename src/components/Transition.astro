@@ -36,41 +36,50 @@ nullTargetWarn: false, nullTarget: null, nullTargetWarn: false });
 
     document.addEventListener("click", (e) => {
       const link = e.target.closest("a");
-      // const mainPreloader = document.querySelector(".main-preloader-od-svg");
-      // const mainPreloaderContainer = document.querySelector(".main-preloader-container");
-
+      
       if (!link) return;
 
       const target = link.getAttribute("target");
-      // const preloadSelector = link.getAttribute("preload-svg");
+      const href = link.getAttribute("href");
+      
+      // Skip transition for external links or new tab links
+      if (target === "_blank" || !href || href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) {
+        return; // Let default behavior happen
+      }
 
-      if (target === "_blank") return; // Let default behavior happen for new tabs
+      // Skip transition for anchor links on same page
+      if (href.startsWith("#")) return;
+
+      // Skip transition if it's the same page (avoid reload loops)
+      if (href === window.location.pathname || href === window.location.href) return;
 
       e.preventDefault();
-
-      // If there's a preload-svg reference, update container
-      // if (preloadSelector) {
-      //   const svgTemplate = document.querySelector(preloadSelector);
-      //   if (svgTemplate) {
-      //     mainPreloaderContainer.innerHTML = svgTemplate.outerHTML;
-      //   } else {
-      //     console.warn(`No SVG found for selector: ${preloadSelector}`);
-      //   }
-      // }
 
       // Start curtain animation
       gsap.to(".load-curtain", {
         opacity: 1,
         duration: 0.3,
         onComplete: () => {
-          // You might want to reinsert or update preloader here again
-          // mainPreloader.classList.remove("hidden");
-          // mainPreloaderContainer.innerHTML = mainPreloader.outerHTML;
-
-          // Navigate after animation (uncomment in production)
-          window.location.href = link.href;
+          // Use regular navigation to preserve browser history
+          window.location.href = href;
         },
       });
+    });
+
+    // Handle page visibility change to hide curtain on back navigation
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        // Page is visible again (user came back), hide curtain
+        gsap.set(".load-curtain", { opacity: 0 });
+      }
+    });
+
+    // Handle pageshow event for better back navigation support
+    window.addEventListener("pageshow", (e) => {
+      // If page is loaded from cache (back/forward navigation), hide curtain
+      if (e.persisted) {
+        gsap.set(".load-curtain", { opacity: 0 });
+      }
     });
 
     // // Detect if the device is a touch device (optimized)
