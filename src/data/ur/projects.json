@@ -1,5 +1,69 @@
 [
   {
+    "id": "12",
+    "title": "نارکنز بلڈرز کے لیے SEO نافذ کاری اور تکنیکی بہتری",
+    "company": "نارکنز بلڈرز",
+    "hasPage": true,
+    "year": "2025",
+    "description": "ریئل اسٹیٹ لیڈ جنریشن کے لیے جامع SEO حکمت عملی اور تکنیکی بہتری",
+    "imageSrc": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "url": "https://narkinsbuilders.com/",
+    "coverImage": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "coverImageAlt": "نارکنز بلڈرز SEO نافذ کاری اور تکنیکی بہتری",
+    "page": {
+      "excerpt": "نارکنز بلڈرز کے ساتھ ہمارے تعاون میں ایک جامع SEO transformation شامل تھا جس نے ان کی ڈیجیٹل موجودگی کو non-ranking status سے Zameen.com اور OLX.com جیسے industry giants کے ساتھ براہ راست مقابلہ کرنے کی سطح تک لے گیا۔ ہم نے مکمل technical SEO overhaul execute کیا جس میں advanced schema markup، WordPress سے MDX میں blog system migration، اور strategic content optimization شامل ہے۔ اس منصوبے میں custom SEO components develop کرنا، analytics tracking implement کرنا، اور scalable content architecture قائم کرنا شامل تھا۔ ہمارے systematic approach کے نتیجے میں 30% فوری traffic improvement، enhanced search engine indexing، اور ایک مضبوط technical foundation حاصل ہوا جو نارکنز بلڈرز کو اپنے target market میں first-page rankings کے لیے position کرتا ہے۔",
+      "splitSections": [
+        {
+          "heading": "Technical SEO Foundation & Analytics",
+          "content": "Complete Technical Infrastructure: ہم نے نارکنز بلڈرز کے non-ranking status کو major competitors کے خلاف address کرتے ہوئے comprehensive technical SEO transformation execute کیا۔ ہماری implementation میں Google Analytics 4 setup with advanced event tracking، Google Search Console verification، XML sitemap generation، اور تمام pages میں canonical tag implementation شامل ہے۔ Advanced Schema Implementation: ہم نے Organization، Property، BlogPosting، LocalBusiness، اور Review schemas سمیت multiple schema types deploy کیے rich snippets اور knowledge panel eligibility بنانے کے لیے۔ ہمارا custom SEOImage component system automatic alt text generation کو یقینی بناتا ہے context-aware optimization کے ساتھ مختلف image interactions کے لیے optimal Core Web Vitals performance standards برقرار رکھتے ہوئے۔",
+          "tags": [
+            "Google Analytics 4",
+            "Google Search Console",
+            "Schema.org Implementation",
+            "Technical SEO Audit",
+            "Performance Optimization",
+            "XML Sitemap Generation"
+          ]
+        },
+        {
+          "heading": "Content Migration & Competitive Strategy",
+          "content": "WordPress to MDX Blog System Migration: ہم نے WordPress سے ایک custom MDX-based publishing platform میں مکمل blog system transformation architect اور execute کیا، جو advanced SEO optimization اور performance improvements کو enable کرتا ہے۔ نیا system dynamic blog posts کو React components کے ساتھ support کرتا ہے، automatic meta tag generation، اور integrated contact optimization۔ Strategic Content Optimization: ہماری research نے local real estate market میں high-value search opportunities identify کیے۔ ہم نے major portal weaknesses کو target کرتے ہوئے competitive positioning strategies develop کیے، نارکنز بلڈرز کی specialized local expertise، direct builder communication، اور 30-year market experience پر emphasis کے ساتھ۔ content framework local SEO elements کو precise geo-targeting اور investment-focused content کے ساتھ integrate کرتا ہے۔",
+          "tags": [
+            "MDX Blog System",
+            "Competitive Analysis",
+            "Content Strategy",
+            "Local Market Positioning",
+            "WordPress Migration",
+            "Search Optimization"
+          ]
+        },
+        {
+          "heading": "Implementation Results & Performance",
+          "content": "Technical Foundation Delivery: ہم نے Google Analytics setup، schema markup deployment، meta tag optimization، اور internal linking structure سمیت comprehensive technical SEO implementation مکمل کی۔ technical foundation نے proper indexing، mobile-first optimization، اور lead generation analysis کے لیے conversion tracking قائم کیا۔ Content Strategy Framework: ہم نے integrated optimization اور cross-referencing capabilities کے ساتھ ایک strategic content plan develop کیا۔ MDX system advanced content features enable کرتا ہے جس میں property comparisons، investment calculators، اور neighborhood guides شامل ہیں۔ Measurable Performance Gains: ہمارے systematic approach نے technical optimizations سے 30% traffic improvement، enhanced search engine indexing، اور mobile optimization کے ذریعے improved user experience کے ساتھ فوری نتائج deliver کیے۔ foundation scalable content marketing کو support کرتا ہے اور نارکنز بلڈرز کو اپنے target market میں competitive rankings کے لیے position کرتا ہے۔",
+          "tags": [
+            "Traffic Growth",
+            "Search Engine Indexing", 
+            "Mobile Optimization",
+            "Lead Generation",
+            "Competitive Positioning",
+            "Performance Metrics"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-seo-2025/search-console-performance.webp",
+        "/images/projects/narkins-seo-2025/search-console-insights.webp",
+        "/images/projects/narkins-seo-2025/pagespeed-seo-score.webp",
+        "/images/projects/narkins-seo-2025/schema-markup-code.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev نے ہماری digital presence کو invisible سے Zameen.com اور OLX.com کے خلاف competitive میں transform کر دیا۔ ہم نے implementation کے پہلے مہینے میں 30% traffic increase دیکھا۔ WordPress سے MDX migration اور schema markup نے اب ہماری properties کو rich snippets میں appear کرایا ہے، جو ہمیں long-term growth کے لیے perfectly position کرتا ہے۔",
+        "author": "سارم نارا، منیجنگ ڈائریکٹر"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    }
+  },
+  {
     "id": "4",
     "title": "وِش کے لیے برانڈنگ اور ویب سائٹ ڈویلپمنٹ",
     "company": "وِش",

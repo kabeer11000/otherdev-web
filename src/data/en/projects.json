@@ -1,5 +1,69 @@
 [
   {
+    "id": "12",
+    "title": "SEO Implementation & Technical Optimization for Narkins Builders",
+    "company": "Narkins Builders",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Comprehensive SEO strategy and technical optimization for real estate lead generation",
+    "imageSrc": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "url": "https://narkinsbuilders.com/",
+    "coverImage": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "coverImageAlt": "Narkins Builders SEO Implementation and Technical Optimization",
+    "page": {
+      "excerpt": "Our collaboration with Narkins Builders involved implementing a comprehensive SEO transformation that elevated their digital presence from non-ranking status to competing directly with industry giants like Zameen.com and OLX.com in Pakistan's competitive real estate market. We executed a complete technical SEO overhaul featuring advanced schema markup, blog system migration from WordPress to MDX, and strategic content optimization. The project included developing custom SEO components, implementing analytics tracking, and establishing a scalable content architecture. Our systematic approach resulted in a 30% immediate traffic improvement, enhanced search engine indexing, and a robust technical foundation that positions Narkins Builders for first-page rankings in their target market.",
+      "splitSections": [
+        {
+          "heading": "Technical SEO Foundation & Analytics",
+          "content": "Complete Technical Infrastructure: We executed a comprehensive technical SEO transformation addressing Narkins Builders' non-ranking status against major competitors. Our implementation included Google Analytics 4 setup with advanced event tracking, Google Search Console verification, XML sitemap generation, and canonical tag implementation across all pages. Advanced Schema Implementation: We deployed multiple schema types including Organization, Property, BlogPosting, LocalBusiness, and Review schemas to create rich snippets and knowledge panel eligibility. Our custom SEOImage component system ensures automatic alt text generation with context-aware optimization for different image interactions while maintaining optimal Core Web Vitals performance standards.",
+          "tags": [
+            "Google Analytics 4",
+            "Google Search Console",
+            "Schema.org Implementation",
+            "Technical SEO Audit",
+            "Performance Optimization",
+            "XML Sitemap Generation"
+          ]
+        },
+        {
+          "heading": "Content Migration & Competitive Strategy",
+          "content": "WordPress to MDX Blog System Migration: We architected and executed a complete blog system transformation from WordPress to a custom MDX-based publishing platform, enabling advanced SEO optimization and performance improvements. The new system supports dynamic blog posts with React components, automatic meta tag generation, and integrated contact optimization. Strategic Content Optimization: Our research identified high-value search opportunities in the local real estate market. We developed competitive positioning strategies targeting major portal weaknesses, emphasizing Narkins Builders' specialized local expertise, direct builder communication, and 30-year market experience. The content framework integrates local SEO elements with precise geo-targeting and investment-focused content.",
+          "tags": [
+            "MDX Blog System",
+            "Competitive Analysis",
+            "Content Strategy",
+            "Local Market Positioning",
+            "WordPress Migration",
+            "Search Optimization"
+          ]
+        },
+        {
+          "heading": "Implementation Results & Performance",
+          "content": "Technical Foundation Delivery: We completed comprehensive technical SEO implementation including Google Analytics setup, schema markup deployment, meta tag optimization, and internal linking structure. The technical foundation established proper indexing, mobile-first optimization, and conversion tracking for lead generation analysis. Content Strategy Framework: We developed a strategic content plan with integrated optimization and cross-referencing capabilities. The MDX system enables advanced content features including property comparisons, investment calculators, and neighborhood guides. Measurable Performance Gains: Our systematic approach delivered immediate results with 30% traffic improvement from technical optimizations, enhanced search engine indexing, and improved user experience through mobile optimization. The foundation supports scalable content marketing and positions Narkins Builders for competitive rankings in their target market.",
+          "tags": [
+            "Traffic Growth",
+            "Search Engine Indexing",
+            "Mobile Optimization",
+            "Lead Generation",
+            "Competitive Positioning",
+            "Performance Metrics"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-seo-2025/search-console-performance.webp",
+        "/images/projects/narkins-seo-2025/search-console-insights.webp",
+        "/images/projects/narkins-seo-2025/pagespeed-seo-score.webp",
+        "/images/projects/narkins-seo-2025/schema-markup-code.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev transformed our digital presence from invisible to competitive against Zameen.com and OLX.com. We saw a 30% traffic increase within the first month of implementation. The WordPress to MDX migration and schema markup now have our properties appearing in rich snippets, positioning us perfectly for long-term growth.",
+        "author": "Sarim Nara, Managing Director"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    }
+  },
+  {
     "id": "9",
     "title": "Real Estate Platform Development for Bin Yousuf Group",
     "company": "Bin Yousuf Group",

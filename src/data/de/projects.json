@@ -1,5 +1,69 @@
 [
   {
+    "id": "12",
+    "title": "SEO-Implementierung & technische Optimierung für Narkins Builders",
+    "company": "Narkins Builders",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Umfassende SEO-Strategie und technische Optimierung für Immobilien-Lead-Generierung",
+    "imageSrc": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "url": "https://narkinsbuilders.com/",
+    "coverImage": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "coverImageAlt": "Narkins Builders SEO-Implementierung und technische Optimierung",
+    "page": {
+      "excerpt": "Unsere Zusammenarbeit mit Narkins Builders umfasste die Implementierung einer umfassenden SEO-Transformation, die ihre digitale Präsenz vom Non-Ranking-Status zur direkten Konkurrenz mit Branchenriesen wie Zameen.com und OLX.com in Pakistans wettbewerbsintensivem Immobilienmarkt erhob. Wir führten eine vollständige technische SEO-Überholung mit fortschrittlicher Schema-Auszeichnung, kompletter Blog-System-Migration von WordPress zu MDX und strategischer Content-Optimierung durch. Das Projekt umfasste die Entwicklung benutzerdefinierter SEO-Komponenten, die Implementierung von Analytics-Tracking und die Etablierung einer skalierbaren Content-Architektur. Unser systematischer Ansatz führte zu einer sofortigen 30%igen Traffic-Verbesserung, verbesserter Suchmaschinen-Indexierung und einem robusten technischen Fundament, das Narkins Builders für First-Page-Rankings in ihrem Zielmarkt positioniert.",
+      "splitSections": [
+        {
+          "heading": "Technical SEO Foundation & Analytics",
+          "content": "Vollständige technische Infrastruktur: Wir führten eine umfassende technische SEO-Transformation durch, die Narkins Builders' Non-Ranking-Status gegenüber großen Konkurrenten adressierte. Unsere Implementierung umfasste Google Analytics 4-Setup mit erweiterten Event-Tracking, Google Search Console-Verifizierung, XML-Sitemap-Generierung und Canonical-Tag-Implementierung auf allen Seiten. Erweiterte Schema-Implementierung: Wir implementierten mehrere Schema-Typen einschließlich Organization, Property, BlogPosting, LocalBusiness und Review-Schemas zur Erstellung von Rich Snippets und Knowledge-Panel-Berechtigung. Unser benutzerdefiniertes SEOImage-Komponentensystem gewährleistet automatische Alt-Text-Generierung mit kontextbewusster Optimierung für verschiedene Bildinteraktionen bei optimalen Core Web Vitals-Performance-Standards.",
+          "tags": [
+            "Google Analytics 4",
+            "Google Search Console",
+            "Schema.org Implementation",
+            "Technical SEO Audit",
+            "Performance Optimization",
+            "XML Sitemap Generation"
+          ]
+        },
+        {
+          "heading": "Content Migration & Competitive Strategy",
+          "content": "WordPress zu MDX Blog-System-Migration: Wir konzipierten und führten eine vollständige Blog-System-Transformation von WordPress zu einer benutzerdefinierten MDX-basierten Publishing-Plattform durch, die erweiterte SEO-Optimierung und Performance-Verbesserungen ermöglicht. Das neue System unterstützt dynamische Blog-Posts mit React-Komponenten, automatische Meta-Tag-Generierung und integrierte Kontakt-Optimierung. Strategische Content-Optimierung: Unsere Recherche identifizierte hochwertige Suchmöglichkeiten im lokalen Immobilienmarkt. Wir entwickelten Wettbewerbspositionierungsstrategien, die auf Schwächen großer Portale abzielen und Narkins Builders' spezialisierte lokale Expertise, direkte Bauherren-Kommunikation und 30-jährige Markterfahrung betonen. Das Content-Framework integriert lokale SEO-Elemente mit präzisem Geo-Targeting und investitionsfokussierten Inhalten.",
+          "tags": [
+            "MDX Blog System",
+            "Competitive Analysis",
+            "Content Strategy",
+            "Local Market Positioning",
+            "WordPress Migration",
+            "Search Optimization"
+          ]
+        },
+        {
+          "heading": "Implementation Results & Performance",
+          "content": "Technical Foundation Delivery: Wir vervollständigten eine umfassende technische SEO-Implementierung einschließlich Google Analytics-Setup, Schema-Markup-Bereitstellung, Meta-Tag-Optimierung und interner Verlinkungsstruktur. Das technische Fundament etablierte ordnungsgemäße Indexierung, Mobile-First-Optimierung und Conversion-Tracking für Lead-Generierungs-Analysen. Content Strategy Framework: Wir entwickelten einen strategischen Content-Plan mit integrierter Optimierung und Cross-Referencing-Funktionen. Das MDX-System ermöglicht erweiterte Content-Features einschließlich Immobilienvergleichen, Investment-Rechnern und Nachbarschaftsführern. Messbare Performance-Gewinne: Unser systematischer Ansatz lieferte sofortige Ergebnisse mit 30% Traffic-Verbesserung durch technische Optimierungen, verbesserte Suchmaschinen-Indexierung und verbesserte Benutzererfahrung durch Mobile-Optimierung. Das Fundament unterstützt skalierbares Content-Marketing und positioniert Narkins Builders für wettbewerbsfähige Rankings in ihrem Zielmarkt.",
+          "tags": [
+            "Traffic Growth",
+            "Search Engine Indexing",
+            "Mobile Optimization",
+            "Lead Generation",
+            "Competitive Positioning",
+            "Performance Metrics"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-seo-2025/search-console-performance.webp",
+        "/images/projects/narkins-seo-2025/search-console-insights.webp",
+        "/images/projects/narkins-seo-2025/pagespeed-seo-score.webp",
+        "/images/projects/narkins-seo-2025/schema-markup-code.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev transformierte unsere digitale Präsenz von unsichtbar zu konkurrenzfähig gegenüber Zameen.com und OLX.com. Wir sahen eine 30%ige Traffic-Steigerung innerhalb des ersten Implementierungsmonats. Die WordPress-zu-MDX-Migration und Schema-Auszeichnung lassen unsere Immobilien nun in Rich Snippets erscheinen und positionieren uns perfekt für langfristiges Wachstum.",
+        "author": "Sarim Nara, Managing Director"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    }
+  },
+  {
     "id": "4",
     "title": "Branding & Website-Entwicklung für Wish",
     "company": "Wish",
