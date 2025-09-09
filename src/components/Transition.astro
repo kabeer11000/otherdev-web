@@ -9,15 +9,23 @@ nullTargetWarn: false, nullTarget: null, nullTargetWarn: false });
       preventDefault: true,
       normalizeScroll: true,
     })
-    // Initialize ScrollSmoother with settings
-    ScrollSmoother.create({
-      trialWarn: false,
-  smooth: 2,
-  speed: 2,
-  effects: true,
- normalizeScroll: false,
-  smoothTouch: 0.1,
-    });
+    // Initialize ScrollSmoother with settings - disabled on mobile for performance
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    if (!isMobile && !isTouchDevice) {
+      ScrollSmoother.create({
+        trialWarn: false,
+        smooth: 2,
+        speed: 2,
+        effects: true,
+        normalizeScroll: false,
+        smoothTouch: false,
+      });
+    } else {
+      // For mobile/touch devices, use native scroll
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
 
     // Curtain animation on page load
     gsap.to(".load-curtain", {
