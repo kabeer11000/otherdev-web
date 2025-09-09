@@ -1,5 +1,160 @@
 [
   {
+    "id": "9",
+    "title": "Real Estate Platform Development for Bin Yousuf Group",
+    "company": "Bin Yousuf Group",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Premium waterfront property showcase platform with advanced lead management",
+    "imageSrc": "/images/projects/bin-yousuf-2025/byg-website-homepage-cover.webp",
+    "url": "https://binyousufgroup.com/",
+    "coverImage": "/images/projects/bin-yousuf-2025/byg-website-homepage-cover.webp",
+    "coverImageAlt": "Bin Yousuf Group Real Estate Platform",
+    "page": {
+      "excerpt": "Our collaboration with Bin Yousuf Group involved creating a sophisticated real estate platform that showcases premium waterfront properties in Karachi's most exclusive developments. As official sales partners of Emaar Oceanfront and HMR Waterfront, they required a digital presence that matched their premium positioning while providing advanced lead management capabilities. We delivered a comprehensive solution featuring interactive property galleries, seamless Google Sheets integration for real-time lead tracking, and optimized user experience that converts visitors into qualified prospects for luxury oceanfront investments.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Creating a Premium Real Estate Experience: Bin Yousuf Group needed a platform that could effectively showcase luxury waterfront properties while maintaining the sophisticated aesthetic expected by high-end real estate clients. The challenge was balancing visual appeal with functionality, ensuring that property details, galleries, and contact forms worked seamlessly across all devices. Advanced Lead Management Integration: As official partners of major developers like Emaar and HMR, they required sophisticated lead tracking and management. We needed to integrate Google Sheets API for real-time lead capture while maintaining data security and ensuring zero lead loss. The system had to handle multiple property inquiries simultaneously while providing instant notifications to their sales team.",
+          "tags": [
+            "Real Estate Platform",
+            "Google Sheets API",
+            "Lead Management",
+            "Luxury Property Showcase",
+            "Astro Framework"
+          ]
+        },
+        {
+          "heading": "Technical Implementation",
+          "content": "Performance-Optimized Architecture: We built the platform using Astro 5.10.0 with React components for dynamic interactions, ensuring optimal performance and SEO. The TypeScript-based architecture provides scalability and maintainability while GSAP animations create engaging property showcases. All form fields were designed as optional to maximize conversion rates, with WhatsApp integration for immediate client communication. Advanced SEO and Structured Data: The platform includes comprehensive SEO optimization with structured data markup for real estate properties, ensuring maximum visibility in search engines. We implemented location-based filtering for Emaar and HMR properties, with detailed property galleries and interactive slideshows that highlight the luxury waterfront lifestyle.",
+          "tags": [
+            "Astro + React",
+            "TypeScript",
+            "GSAP Animations", 
+            "SEO Optimization",
+            "Structured Data",
+            "WhatsApp Integration"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/bin-yousuf-2025/byg-property-showcase.webp",
+        "/images/projects/bin-yousuf-2025/emaar-properties-mobile.webp",
+        "/images/projects/bin-yousuf-2025/hmr-waterfront-gallery.webp",
+        "/images/projects/bin-yousuf-2025/lead-management-system.webp",
+        "/images/projects/bin-yousuf-2025/luxury-apartments-karachi.webp",
+        "/images/projects/bin-yousuf-2025/byg-logo-brand.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev transformed our digital presence in the luxury real estate market. The platform they created perfectly captures the premium nature of our waterfront properties while providing us with powerful lead management tools. Since launch, we've experienced a significant increase in qualified inquiries and the Google Sheets integration has streamlined our entire sales process. The website's professional design and smooth user experience have significantly enhanced our credibility as official Emaar and HMR partners. We couldn't be happier with the results.",
+        "author": "Wahib Yousuf, Managing Director"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "10",
+    "title": "AI Legal Assistant Platform Development for Lexa",
+    "company": "Lexa", 
+    "hasPage": true,
+    "year": "2025",
+    "description": "Intelligent legal AI assistant for contract drafting, collaboration and document automation",
+    "imageSrc": "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+    "url": "https://lexa.deployments.otherdev.com/",
+    "coverImage": "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+    "coverImageAlt": "Lexa Legal Document Management Platform",
+    "page": {
+      "excerpt": "Our collaboration with Lexa involved developing an intelligent AI legal assistant that transforms how law firms and SMEs approach contract drafting and document management. We built a sophisticated AI-powered platform that serves as a virtual legal assistant, providing real-time contract analysis, automated document generation, and intelligent legal recommendations. The platform combines advanced natural language processing with collaborative editing capabilities, enabling legal professionals across Asia and the Middle East to draft, review, and manage contracts with AI-driven insights while maintaining the highest standards of accuracy and compliance.",
+      "splitSections": [
+        {
+          "heading": "Technical Challenges",
+          "content": "Real-time Collaborative Editing: Building a robust real-time collaboration system required implementing Y.js with WebSocket connections to handle simultaneous editing by multiple users without conflicts. We developed custom TipTap extensions for pagination and advanced document structuring, ensuring professional legal document formatting while maintaining real-time synchronization across all connected clients. Advanced Document Architecture: Legal documents require sophisticated multi-page layouts with precise formatting, headers, footers, and pagination. We created a custom document engine that handles complex legal document structures while preserving formatting integrity during collaborative editing sessions and providing seamless export capabilities.",
+          "tags": [
+            "Real-time Collaboration",
+            "Y.js Integration", 
+            "TipTap Extensions",
+            "WebSocket Architecture",
+            "Document Pagination"
+          ]
+        },
+        {
+          "heading": "Platform Development",
+          "content": "Full-stack Legal SaaS Architecture: We built Lexa using Astro 5.13 with React 19 components, creating a highly performant and scalable legal platform. The architecture includes advanced state management with Nanostores, comprehensive authentication systems, and a sophisticated document management vault. The platform supports multiple languages and includes AI-powered features for contract intelligence and automated workflows. Security and Compliance Implementation: Given the sensitive nature of legal documents, we implemented enterprise-grade security measures including GDPR-compliant data handling, encrypted document storage, and secure digital signature capabilities. The platform includes comprehensive audit trails, version control, and access management systems to meet strict legal industry requirements.",
+          "tags": [
+            "Astro + React",
+            "Legal SaaS Platform",
+            "AI Integration",
+            "GDPR Compliance",
+            "Digital Signatures",
+            "Enterprise Security"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+        "/images/projects/lexa-2025/lexa-document-editor.webp", 
+        "/images/projects/lexa-2025/lexa-collaboration-features.webp",
+        "/images/projects/lexa-2025/lexa-legal-templates.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev delivered exactly what we envisioned for Lexa - an intelligent AI legal assistant that transforms how we approach contract drafting and legal document management. The AI-powered analysis and automated recommendations have revolutionized our workflow, while the real-time collaboration features keep our team perfectly synchronized. Having an AI assistant that understands legal context and provides intelligent suggestions has been game-changing for our firm. Since launch, we've dramatically improved our document processing efficiency and our clients are amazed by the AI-driven insights. The team's deep understanding of legal AI requirements and technical expertise made this project a tremendous success.",
+        "author": "Team Lexa"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "11",
+    "title": "E-commerce Platform Development for Kiswa Noire",
+    "company": "Kiswa Noire",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Premium children's lifestyle brand e-commerce platform with advanced Shopify customization",
+    "imageSrc": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "url": "https://kiswanoire.com/",
+    "coverImage": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coverImageAlt": "Kiswa Noire E-commerce Platform",
+    "page": {
+      "excerpt": "Our collaboration with Kiswa Noire involved creating a sophisticated e-commerce platform for this premium Danish children's lifestyle brand. We developed a highly customized Shopify solution that embodies Scandinavian minimalism while delivering advanced functionality for international markets. The platform features comprehensive multilingual support, geolocation-based personalization, and seamless shopping experiences across all touchpoints. Our work focused on translating Kiswa Noire's design philosophy into a digital experience that resonates with parents seeking quality, sustainable children's products across European markets.",
+      "splitSections": [
+        {
+          "heading": "Design & User Experience",
+          "content": "Scandinavian Minimalism: We crafted a visual experience that reflects Kiswa Noire's Danish heritage, emphasizing clean lines, neutral color palettes, and generous white space. The design prioritizes lifestyle photography that showcases products in real family contexts, creating an emotional connection with parents. Every element was carefully considered to maintain the brand's premium positioning while ensuring accessibility and usability. Advanced Navigation Architecture: The platform features a sophisticated mega menu system with visual category blocks, making it intuitive for parents to shop by child's developmental stage or product category. We implemented dynamic product recommendations, comprehensive filtering systems, and seamless search functionality to help customers discover relevant products effortlessly.",
+          "tags": [
+            "Shopify Customization",
+            "Scandinavian Design",
+            "User Experience Design",
+            "Mega Menu System",
+            "Responsive Design"
+          ]
+        },
+        {
+          "heading": "Technical Implementation",
+          "content": "International E-commerce Architecture: We built a robust multi-market platform supporting multiple languages (EN, DE, FR, DK) and currencies, with geolocation-based personalization that automatically adapts content and pricing for different European markets. The custom Shopify theme includes advanced CSS variable management for consistent responsive behavior across all devices and market variations. Performance & Advanced Features: The platform includes sophisticated technical implementations including lazy-loaded assets, performance tracking systems, comprehensive analytics integration, and custom JavaScript-driven interactive elements. We integrated advanced payment solutions (Apple Pay, Google Pay, PayPal), GDPR-compliant systems, and comprehensive inventory management across international markets.",
+          "tags": [
+            "Multilingual Platform",
+            "Geolocation Technology",
+            "Performance Optimization",
+            "Payment Integration",
+            "GDPR Compliance",
+            "International Commerce"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "testimonial": {
+        "content": "Other Dev understood our vision for bringing Scandinavian design principles to the digital space. The e-commerce platform they created perfectly captures our brand essence while delivering the sophisticated functionality we needed for international markets. The attention to detail in both design and technical implementation has been exceptional. Since launch, we've experienced remarkable growth in online engagement and our customers consistently praise the intuitive shopping experience. The platform's multilingual capabilities and performance have been crucial to our European expansion.",
+        "author": "Kiswa Noire Team"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
     "id": "4",
     "title": "Branding & website development for Wish",
     "company": "Wish",
@@ -32,7 +187,7 @@
         "/images/projects/wish-2024/with-other-dev.webp"
       ],
       "testimonial": {
-        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to an incredible 500% surge in sales. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
+        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to a substantial increase in sales performance. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
         "author": "Talha, Founder of Wish"
       },
       "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -311,13 +466,6 @@
       },
       "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
-  },
-  {
-    "id": "7",
-    "title": "Website development and Branding for Neubee's Tailors",
-    "year": "2023",
-    "description": "Design, Headless Shopify Deployment, Marketing & Website Development",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp"
   },
   {
     "id": "8",

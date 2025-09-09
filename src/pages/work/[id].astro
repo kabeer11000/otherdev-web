@@ -79,7 +79,7 @@ const { page } = project;
         <div data-speed="clamp(0.5)" class="pb-[4rem] grid grid-cols-1 lg:grid-cols-6 gap-x-8">
           <div class="col-span-4">
             <h1
-              class="mt-auto max-w-5xl queens-compressed text-[20vw] text-left align-bottom p-0 m-0 h-[6rem] lg:h-[20vh] lg:text-[20vh] z-0">
+              class="mt-auto max-w-5xl queens-compressed text-[20vw] text-left align-bottom p-0 m-0 h-auto lg:h-[20vh] lg:text-[20vh] z-0">
               {project.company}
             </h1>
             <p class="flex max-w-5xl justify-start py-1 text-left items-baseline mt-4 ">
@@ -87,9 +87,9 @@ const { page } = project;
             </p>
           </div>
           <div
-            class="col-span-2 flex lg:justify-end justify-start text-left lg:text-right items-baseline mt-4 ">
+            class="col-span-2 flex lg:justify-end justify-start text-left lg:text-right items-baseline mt-8 lg:mt-4">
             <!-- <p class="mr-4">{project.location}</p> -->
-            <div class="flex gap-4 items-center space-between mt-auto">
+            <div class="flex gap-4 items-center space-between mt-4 lg:mt-auto">
               <p>{project.year}</p>
               <div
                 class="bg-black text-lg flex items-center py-1 text-nowrap cursor-pointer px-4 rounded-full">
