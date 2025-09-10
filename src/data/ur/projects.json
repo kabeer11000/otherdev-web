@@ -1,6 +1,225 @@
 [
   {
-    "id": "4",
+    "id": "5",
+    "title": "نارکنز بلڈرز کے لیے SEO نافذ کاری اور تکنیکی بہتری",
+    "company": "نارکنز بلڈرز",
+    "hasPage": true,
+    "year": "2025",
+    "description": "ریئل اسٹیٹ لیڈ جنریشن کے لیے جامع SEO حکمت عملی اور تکنیکی بہتری",
+    "imageSrc": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "url": "https://narkinsbuilders.com/",
+    "coverImage": "/images/projects/narkins-seo-2025/narkins-seo-implementation-cover.webp",
+    "coverImageAlt": "نارکنز بلڈرز SEO نافذ کاری اور تکنیکی بہتری",
+    "page": {
+      "excerpt": "نارکنز بلڈرز کے ساتھ ہمارے تعاون میں ایک جامع SEO transformation شامل تھا جس نے ان کی ڈیجیٹل موجودگی کو non-ranking status سے Zameen.com اور OLX.com جیسے industry giants کے ساتھ براہ راست مقابلہ کرنے کی سطح تک لے گیا۔ ہم نے مکمل technical SEO overhaul execute کیا جس میں advanced schema markup، WordPress سے MDX میں blog system migration، اور strategic content optimization شامل ہے۔ اس منصوبے میں custom SEO components develop کرنا، analytics tracking implement کرنا، اور scalable content architecture قائم کرنا شامل تھا۔ ہمارے systematic approach کے نتیجے میں 30% فوری traffic improvement، enhanced search engine indexing، اور ایک مضبوط technical foundation حاصل ہوا جو نارکنز بلڈرز کو اپنے target market میں first-page rankings کے لیے position کرتا ہے۔",
+      "splitSections": [
+        {
+          "heading": "Technical SEO Foundation & Analytics",
+          "content": "Complete Technical Infrastructure: ہم نے نارکنز بلڈرز کے non-ranking status کو major competitors کے خلاف address کرتے ہوئے comprehensive technical SEO transformation execute کیا۔ ہماری implementation میں Google Analytics 4 setup with advanced event tracking، Google Search Console verification، XML sitemap generation، اور تمام pages میں canonical tag implementation شامل ہے۔ Advanced Schema Implementation: ہم نے Organization، Property، BlogPosting، LocalBusiness، اور Review schemas سمیت multiple schema types deploy کیے rich snippets اور knowledge panel eligibility بنانے کے لیے۔ ہمارا custom SEOImage component system automatic alt text generation کو یقینی بناتا ہے context-aware optimization کے ساتھ مختلف image interactions کے لیے optimal Core Web Vitals performance standards برقرار رکھتے ہوئے۔",
+          "tags": [
+            "Google Analytics 4",
+            "Google Search Console",
+            "Schema.org Implementation",
+            "Technical SEO Audit",
+            "Performance Optimization",
+            "XML Sitemap Generation"
+          ]
+        },
+        {
+          "heading": "Content Migration & Competitive Strategy",
+          "content": "WordPress to MDX Blog System Migration: ہم نے WordPress سے ایک custom MDX-based publishing platform میں مکمل blog system transformation architect اور execute کیا، جو advanced SEO optimization اور performance improvements کو enable کرتا ہے۔ نیا system dynamic blog posts کو React components کے ساتھ support کرتا ہے، automatic meta tag generation، اور integrated contact optimization۔ Strategic Content Optimization: ہماری research نے local real estate market میں high-value search opportunities identify کیے۔ ہم نے major portal weaknesses کو target کرتے ہوئے competitive positioning strategies develop کیے، نارکنز بلڈرز کی specialized local expertise، direct builder communication، اور 30-year market experience پر emphasis کے ساتھ۔ content framework local SEO elements کو precise geo-targeting اور investment-focused content کے ساتھ integrate کرتا ہے۔",
+          "tags": [
+            "MDX Blog System",
+            "Competitive Analysis",
+            "Content Strategy",
+            "Local Market Positioning",
+            "WordPress Migration",
+            "Search Optimization"
+          ]
+        },
+        {
+          "heading": "Implementation Results & Performance",
+          "content": "Technical Foundation Delivery: ہم نے Google Analytics setup، schema markup deployment، meta tag optimization، اور internal linking structure سمیت comprehensive technical SEO implementation مکمل کی۔ technical foundation نے proper indexing، mobile-first optimization، اور lead generation analysis کے لیے conversion tracking قائم کیا۔ Content Strategy Framework: ہم نے integrated optimization اور cross-referencing capabilities کے ساتھ ایک strategic content plan develop کیا۔ MDX system advanced content features enable کرتا ہے جس میں property comparisons، investment calculators، اور neighborhood guides شامل ہیں۔ Measurable Performance Gains: ہمارے systematic approach نے technical optimizations سے 30% traffic improvement، enhanced search engine indexing، اور mobile optimization کے ذریعے improved user experience کے ساتھ فوری نتائج deliver کیے۔ foundation scalable content marketing کو support کرتا ہے اور نارکنز بلڈرز کو اپنے target market میں competitive rankings کے لیے position کرتا ہے۔",
+          "tags": [
+            "Traffic Growth",
+            "Search Engine Indexing", 
+            "Mobile Optimization",
+            "Lead Generation",
+            "Competitive Positioning",
+            "Performance Metrics"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-seo-2025/search-console-performance.webp",
+        "/images/projects/narkins-seo-2025/search-console-insights.webp",
+        "/images/projects/narkins-seo-2025/pagespeed-seo-score.webp",
+        "/images/projects/narkins-seo-2025/schema-markup-code.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev نے ہماری digital presence کو invisible سے Zameen.com اور OLX.com کے خلاف competitive میں transform کر دیا۔ ہم نے implementation کے پہلے مہینے میں 30% traffic increase دیکھا۔ WordPress سے MDX migration اور schema markup نے اب ہماری properties کو rich snippets میں appear کرایا ہے، جو ہمیں long-term growth کے لیے perfectly position کرتا ہے۔",
+        "author": "سارم نارا، منیجنگ ڈائریکٹر"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+    }
+  },
+  {
+    "id": "6",
+    "title": "بن یوسف گروپ کے لیے ریئل اسٹیٹ پلیٹ فارم ڈویلپمنٹ",
+    "company": "بن یوسف گروپ",
+    "hasPage": true,
+    "year": "2025",
+    "description": "پریمیم واٹر فرنٹ پراپرٹی شوکیس پلیٹ فارم ایڈوانسڈ لیڈ مینجمنٹ کے ساتھ",
+    "imageSrc": "/images/projects/bin-yousuf-2025/byg-website-homepage-cover.webp",
+    "url": "https://binyousufgroup.com/",
+    "coverImage": "/images/projects/bin-yousuf-2025/byg-website-homepage-cover.webp",
+    "coverImageAlt": "بن یوسف گروپ ریئل اسٹیٹ پلیٹ فارم",
+    "page": {
+      "excerpt": "بن یوسف گروپ کے ساتھ ہمارے تعاون میں ایک پیچیدہ ریئل اسٹیٹ پلیٹ فارم بنانا شامل تھا جو کراچی کے انتہائی ایکسکلوسیو ڈیولپمنٹس میں پریمیم واٹر فرنٹ پراپرٹیز کو ظاہر کرتا ہے۔ Emaar Oceanfront اور HMR Waterfront کے آفیشل سیلز پارٹنرز کے طور پر، انہیں ایک ڈیجیٹل موجودگی کی ضرورت تھی جو ان کی پریمیم positioning کے مطابق ہو اور ایڈوانسڈ لیڈ مینجمنٹ capabilities فراہم کرے۔ ہم نے interactive property galleries، Google Sheets integration کے ساتھ real-time lead tracking، اور optimized user experience کے ساتھ ایک comprehensive solution فراہم کیا جو visitors کو luxury oceanfront investments کے لیے qualified prospects میں تبدیل کرتا ہے۔",
+      "splitSections": [
+        {
+          "heading": "چیلنجز",
+          "content": "پریمیم ریئل اسٹیٹ تجربہ بنانا: بن یوسف گروپ کو ایک ایسا پلیٹ فارم چاہیے تھا جو luxury waterfront properties کو مؤثر طریقے سے showcase کر سکے اور high-end real estate clients کی طرف سے متوقع sophisticated aesthetic کو برقرار رکھ سکے۔ چیلنج یہ تھا کہ visual appeal کو functionality کے ساتھ balance کریں، یہ یقینی بناتے ہوئے کہ property details، galleries، اور contact forms تمام devices پر seamlessly کام کریں۔ ایڈوانسڈ لیڈ مینجمنٹ انٹیگریشن: Emaar اور HMR جیسے major developers کے آفیشل partners کے طور پر، انہیں sophisticated lead tracking اور management کی ضرورت تھی۔ ہمیں real-time lead capture کے لیے Google Sheets API integrate کرنا تھا جبکہ data security maintain کرنا اور zero lead loss ensure کرنا تھا۔ system کو multiple property inquiries کو simultaneously handle کرنا تھا اور sales team کو instant notifications فراہم کرنے تھے۔",
+          "tags": [
+            "ریئل اسٹیٹ پلیٹ فارم",
+            "Google Sheets API",
+            "لیڈ مینجمنٹ",
+            "Luxury Property Showcase",
+            "Astro Framework"
+          ]
+        },
+        {
+          "heading": "تکنیکی Implementation",
+          "content": "Performance-Optimized Architecture: ہم نے پلیٹ فارم کو Astro 5.10.0 کے ساتھ React components کے ساتھ dynamic interactions کے لیے بنایا، optimal performance اور SEO ensure کرتے ہوئے۔ TypeScript-based architecture scalability اور maintainability فراہم کرتی ہے جبکہ GSAP animations engaging property showcases بناتی ہیں۔ تمام form fields کو optional بنایا گیا conversion rates maximize کرنے کے لیے، WhatsApp integration کے ساتھ immediate client communication کے لیے۔ Advanced SEO اور Structured Data: پلیٹ فارم میں comprehensive SEO optimization شامل ہے real estate properties کے لیے structured data markup کے ساتھ، search engines میں maximum visibility ensure کرنے کے لیے۔ ہم نے Emaar اور HMR properties کے لیے location-based filtering implement کی، detailed property galleries اور interactive slideshows کے ساتھ جو luxury waterfront lifestyle کو highlight کرتے ہیں۔",
+          "tags": [
+            "Astro + React",
+            "TypeScript",
+            "GSAP Animations",
+            "SEO Optimization",
+            "Structured Data",
+            "WhatsApp Integration"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/bin-yousuf-2025/byg-property-showcase.webp",
+        "/images/projects/bin-yousuf-2025/emaar-properties-mobile.webp",
+        "/images/projects/bin-yousuf-2025/hmr-waterfront-gallery.webp",
+        "/images/projects/bin-yousuf-2025/lead-management-system.webp",
+        "/images/projects/bin-yousuf-2025/luxury-apartments-karachi.webp",
+        "/images/projects/bin-yousuf-2025/byg-logo-brand.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev نے luxury real estate market میں ہماری digital presence کو transform کر دیا۔ جو platform انہوں نے بنایا ہے وہ perfectly ہماری waterfront properties کی premium nature کو capture کرتا ہے اور ہمیں powerful lead management tools فراہم کرتا ہے۔ launch کے بعد سے، ہم نے qualified inquiries میں significant increase experience کیا ہے اور Google Sheets integration نے ہمارے entire sales process کو streamline کر دیا ہے۔ website کا professional design اور smooth user experience نے official Emaar اور HMR partners کے طور پر ہماری credibility کو significantly enhance کیا ہے۔ ہم results سے زیادہ خوش نہیں ہو سکتے۔",
+        "author": "وہیب یوسف، منیجنگ ڈائریکٹر"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "7",
+    "title": "لیکسا کے لیے AI قانونی Assistant Platform Development",
+    "company": "لیکسا",
+    "hasPage": true,
+    "year": "2025",
+    "description": "contract drafting، collaboration اور document automation کے لیے intelligent legal AI assistant",
+    "imageSrc": "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+    "url": "https://lexa.deployments.otherdev.com/",
+    "coverImage": "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+    "coverImageAlt": "لیکسا Legal Document Management Platform",
+    "page": {
+      "excerpt": "لیکسا کے ساتھ ہمارے تعاون میں ایک intelligent AI legal assistant develop کرنا شامل تھا جو law firms اور SMEs کے contract drafting اور document management کے approach کو transform کرتا ہے۔ ہم نے ایک sophisticated AI-powered platform بنایا جو virtual legal assistant کے طور پر کام کرتا ہے، real-time contract analysis، automated document generation، اور intelligent legal recommendations فراہم کرتا ہے۔ platform advanced natural language processing کو collaborative editing capabilities کے ساتھ combine کرتا ہے، Asia اور Middle East میں legal professionals کو AI-driven insights کے ساتھ contracts draft، review، اور manage کرنے کی سہولت دیتا ہے جبکہ accuracy اور compliance کے highest standards maintain کرتا ہے۔",
+      "splitSections": [
+        {
+          "heading": "تکنیکی چیلنجز",
+          "content": "Real-time Collaborative Editing: robust real-time collaboration system بنانے کے لیے Y.js کو WebSocket connections کے ساتھ implement کرنا پڑا تاکہ multiple users کی simultaneous editing conflicts کے بغیر handle کی جا سکے۔ ہم نے pagination اور advanced document structuring کے لیے custom TipTap extensions develop کیے، professional legal document formatting ensure کرتے ہوئے real-time synchronization maintain کیا تمام connected clients میں۔ Advanced Document Architecture: legal documents کو sophisticated multi-page layouts کی ضرورت ہوتی ہے precise formatting، headers، footers، اور pagination کے ساتھ۔ ہم نے ایک custom document engine بنایا جو complex legal document structures handle کرتا ہے formatting integrity preserve کرتے ہوئے collaborative editing sessions کے دوران اور seamless export capabilities فراہم کرتا ہے۔",
+          "tags": [
+            "Real-time Collaboration",
+            "Y.js Integration",
+            "TipTap Extensions",
+            "WebSocket Architecture",
+            "Document Pagination"
+          ]
+        },
+        {
+          "heading": "Platform Development",
+          "content": "Full-stack Legal SaaS Architecture: ہم نے لیکسا کو Astro 5.13 کے ساتھ React 19 components کے ساتھ بنایا، ایک highly performant اور scalable legal platform create کرتے ہوئے۔ architecture میں Nanostores کے ساتھ advanced state management، comprehensive authentication systems، اور sophisticated document management vault شامل ہے۔ platform multiple languages support کرتا ہے اور contract intelligence اور automated workflows کے لیے AI-powered features شامل کرتا ہے۔ Security اور Compliance Implementation: legal documents کی sensitive nature کو دیکھتے ہوئے، ہم نے enterprise-grade security measures implement کیے جن میں GDPR-compliant data handling، encrypted document storage، اور secure digital signature capabilities شامل ہیں۔ platform میں comprehensive audit trails، version control، اور access management systems شامل ہیں strict legal industry requirements کو meet کرنے کے لیے۔",
+          "tags": [
+            "Astro + React",
+            "Legal SaaS Platform",
+            "AI Integration",
+            "GDPR Compliance",
+            "Digital Signatures",
+            "Enterprise Security"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/lexa-2025/lexa-platform-homepage.webp",
+        "/images/projects/lexa-2025/lexa-document-editor.webp",
+        "/images/projects/lexa-2025/lexa-collaboration-features.webp",
+        "/images/projects/lexa-2025/lexa-legal-templates.webp"
+      ],
+      "testimonial": {
+        "content": "Other Dev نے exactly وہی deliver کیا جس کا ہم نے لیکسا کے لیے تصور کیا تھا - ایک intelligent AI legal assistant جو contract drafting اور legal document management کے ہمارے approach کو transform کرتا ہے۔ AI-powered analysis اور automated recommendations نے ہمارے workflow کو revolutionize کر دیا ہے، جبکہ real-time collaboration features ہماری team کو perfectly synchronized رکھتے ہیں۔ ایک AI assistant رکھنا جو legal context سمجھتا ہے اور intelligent suggestions فراہم کرتا ہے ہمارے firm کے لیے game-changing رہا ہے۔ launch کے بعد سے، ہم نے اپنی document processing efficiency کو dramatically improve کیا ہے اور ہمارے clients AI-driven insights سے amazed ہیں۔ team کی legal AI requirements اور technical expertise کی deep understanding نے اس project کو tremendous success بنایا۔",
+        "author": "Team Lexa"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "8",
+    "title": "کسوہ نوار کے لیے E-commerce Platform Development",
+    "company": "کسوہ نوار",
+    "hasPage": true,
+    "year": "2025",
+    "description": "advanced Shopify customization کے ساتھ premium children's lifestyle brand e-commerce platform",
+    "imageSrc": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "url": "https://kiswanoire.com/",
+    "coverImage": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coverImageAlt": "کسوہ نوار E-commerce Platform",
+    "page": {
+      "excerpt": "کسوہ نوار کے ساتھ ہمارے تعاون میں اس premium Danish children's lifestyle brand کے لیے ایک sophisticated e-commerce platform بنانا شامل تھا۔ ہم نے ایک highly customized Shopify solution develop کیا جو Scandinavian minimalism embody کرتا ہے اور international markets کے لیے advanced functionality deliver کرتا ہے۔ platform میں comprehensive multilingual support، geolocation-based personalization، اور تمام touchpoints میں seamless shopping experiences شامل ہیں۔ ہمارا کام کسوہ نوار کے design philosophy کو ایک digital experience میں translate کرنے پر focused تھا جو European markets میں quality، sustainable children's products تلاش کرنے والے parents کے ساتھ resonate کرے۔",
+      "splitSections": [
+        {
+          "heading": "Design & User Experience",
+          "content": "Scandinavian Minimalism: ہم نے ایک visual experience craft کیا جو کسوہ نوار کے Danish heritage کو reflect کرتا ہے، clean lines، neutral color palettes، اور generous white space emphasize کرتے ہوئے۔ design lifestyle photography کو prioritize کرتا ہے جو products کو real family contexts میں showcase کرتا ہے، parents کے ساتھ emotional connection بناتے ہوئے۔ ہر element کو carefully consider کیا گیا brand کی premium positioning maintain کرنے کے لیے جبکہ accessibility اور usability ensure کی گئی۔ Advanced Navigation Architecture: platform میں visual category blocks کے ساتھ sophisticated mega menu system ہے، جو parents کے لیے child's developmental stage یا product category کے ذریعے shop کرنا intuitive بناتا ہے۔ ہم نے dynamic product recommendations، comprehensive filtering systems، اور seamless search functionality implement کی customers کو relevant products effortlessly discover کرنے میں مدد کے لیے۔",
+          "tags": [
+            "Shopify Customization",
+            "Scandinavian Design",
+            "User Experience Design",
+            "Mega Menu System",
+            "Responsive Design"
+          ]
+        },
+        {
+          "heading": "تکنیکی Implementation",
+          "content": "International E-commerce Architecture: ہم نے ایک robust multi-market platform بنایا جو multiple languages (EN, DE, FR, DK) اور currencies support کرتا ہے، geolocation-based personalization کے ساتھ جو automatically content اور pricing کو different European markets کے لیے adapt کرتا ہے۔ custom Shopify theme میں advanced CSS variable management شامل ہے consistent responsive behavior کے لیے تمام devices اور market variations میں۔ Performance & Advanced Features: platform میں sophisticated technical implementations شامل ہیں جن میں lazy-loaded assets، performance tracking systems، comprehensive analytics integration، اور custom JavaScript-driven interactive elements ہیں۔ ہم نے advanced payment solutions (Apple Pay, Google Pay, PayPal)، GDPR-compliant systems، اور international markets میں comprehensive inventory management integrate کیا۔",
+          "tags": [
+            "Multilingual Platform",
+            "Geolocation Technology",
+            "Performance Optimization",
+            "Payment Integration",
+            "GDPR Compliance",
+            "International Commerce"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "testimonial": {
+        "content": "Other Dev نے ہمارے vision کو digital space میں Scandinavian design principles لانے کے لیے سمجھا۔ جو e-commerce platform انہوں نے بنایا ہے وہ perfectly ہمارے brand essence کو capture کرتا ہے اور international markets کے لیے ہمیں needed sophisticated functionality فراہم کرتا ہے۔ design اور technical implementation دونوں میں attention to detail exceptional رہا ہے۔ launch کے بعد سے، ہم نے online engagement میں remarkable growth experience کی ہے اور ہمارے customers consistently intuitive shopping experience کی praise کرتے ہیں۔ platform کی multilingual capabilities اور performance ہمارے European expansion کے لیے crucial رہے ہیں۔",
+        "author": "کسوہ نوار ٹیم"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "9",
     "title": "وِش کے لیے برانڈنگ اور ویب سائٹ ڈویلپمنٹ",
     "company": "وِش",
     "hasPage": true,
@@ -39,7 +258,7 @@
     }
   },
   {
-    "id": "1",
+    "id": "10",
     "title": "نارکنز بلڈرز کے لیے ویب سائٹ انفراسٹرکچر کی تخلیق",
     "company": "نارکنز",
     "hasPage": true,
@@ -90,7 +309,7 @@
     }
   },
   {
-    "id": "54",
+    "id": "11",
     "title": "فن لٹ کے لیے برانڈنگ اور SaaS پلیٹ فارم کی ڈویلپمنٹ",
     "company": "فن لٹ",
     "hasPage": true,
@@ -161,7 +380,7 @@
     }
   },
   {
-    "id": "5",
+    "id": "4",
     "title": "گرووی پاکستان کے لیے ویب سائٹ ڈویلپمنٹ",
     "company": "گرووی",
     "hasPage": true,
@@ -263,7 +482,7 @@
     }
   },
   {
-    "id": "6",
+    "id": "2",
     "title": "ٹائنی فٹ پرنٹ کافی کے لیے ادائیگی کا انفراسٹرکچر منتقلی",
     "year": "2024",
     "description": "ویب سائٹ ڈیزائن، ریچارج منتقلی اور شوپائف تھیم ڈویلپمنٹ",
@@ -271,14 +490,7 @@
     "url": "/blog/dc423a1a-f68e-42bd-a9b3-430bd57f82c1"
   },
   {
-    "id": "7",
-    "title": "نیوبی کے ٹیلرز کے لیے ویب سائٹ ڈویلپمنٹ اور برانڈنگ",
-    "year": "2023",
-    "description": "ڈیزائن، ہیڈلیس شوپائف ڈیپلائمنٹ، مارکیٹنگ اور ویب سائٹ ڈویلپمنٹ",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp"
-  },
-  {
-    "id": "8",
+    "id": "1",
     "title": "ایک قدم اور کے لیے انٹرپرائز انفراسٹرکچر ڈویلپمنٹ",
     "year": "2023",
     "description": "ویب سائٹ ڈیزائن، ویب سائٹ ڈویلپمنٹ اور انفراسٹرکچر",
